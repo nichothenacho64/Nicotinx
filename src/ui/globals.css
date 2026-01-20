@@ -1,9 +1,36 @@
 @import "tailwindcss";
 
 body {
-	font-family: var(--font-nunito-sans), system-ui, sans-serif;
+    font-family: var(--font-nunito-sans), system-ui, sans-serif;
+    /* padding-inline: 1rem; */
+    margin: 0;
 }
 
-h1, .nav-links-container {
-	font-family: var(--font-dm-sans), system-ui, sans-serif;
+.body-container {
+    @apply mx-auto max-w-6xl p-5;
+}
+
+h1,
+.nav-links-container {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.footer-link {
+    @apply hover:text-white;
+}
+
+#navbar {
+    @apply flex justify-between items-center text-white;
+}
+
+#footer {
+    @apply bg-gray-800 text-gray-300;
+}
+
+#navbarContainer {
+    @apply bg-gray-600 sticky top-0 z-50 transition-opacity duration-300 ease-out;
+}
+
+#copyrightLabel {
+    @apply mt-10 pt-4 border-t border-gray-700 text-gray-400 text-xs;
 }

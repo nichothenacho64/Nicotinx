@@ -1,17 +1,31 @@
+"use client";
+
 import Link from "next/link";
+import { NAV_LINKS } from "@/lib/navigation";
+import { getFooterVisibility } from "@/lib/sticky-navbar";
 
 export default function Navbar() {
+    const footerIsVisible = getFooterVisibility("footer");
+
     return (
-        <nav className="bg-gray-600 text-white">
-            <div className="flex justify-between items-center mx-auto px-4 py-3 max-w-6xl">
+        <nav
+            id="navbarContainer"
+            className={`transition-opacity duration-300 ${footerIsVisible
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+        >
+            <div id="navbar" className="body-container">
                 <div className="font-semibold nav-links-container">
                     <Link href="/">Nico</Link>
                 </div>
 
                 <div className="flex gap-20 text-lg nav-links-container">
-                    <Link href="/">Home</Link>
-                    <Link href="/">About</Link>
-                    <Link href="/contact">Contact</Link>
+                    {NAV_LINKS.map((link) => (
+                        <Link key={link.href} href={link.href}>
+                            {link.label}
+                        </Link>
+                    ))}
                 </div>
             </div>
         </nav>
