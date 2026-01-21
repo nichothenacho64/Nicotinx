@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, EXTERNAL_LINKS } from "@/lib/navigation";
-import { CURRENT_YEAR } from "@/lib/constants";
+import { NAV_LINKS, EXTERNAL_LINKS, CURRENT_YEAR } from "@/lib/constants";
 
 function FooterLinks() {
     return (

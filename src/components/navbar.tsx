@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import clsx from "clsx";
-import { NAV_LINKS } from "@/lib/navigation";
+import { NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility } from "@/lib/sticky-navbar";
 
 export default function Navbar() {

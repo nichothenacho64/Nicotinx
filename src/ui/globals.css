@@ -5,6 +5,11 @@
     --canva-embed-transition-duration: 1000ms;
 }
 
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
 body {
     background-color: #000; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
@@ -30,6 +35,10 @@ h1 {
 
 .bg-blue-default {
     @apply bg-(--blue-default);
+}
+
+.text-blue-default {
+    @apply text-(--blue-default);
 }
 
 .body-container {
@@ -73,10 +82,19 @@ h1 {
     content: "";
     @apply absolute inset-0 -z-10
         bg-(--blue-default)
-        origin-right scale-x-100
+        origin-right 
+        scale-x-100
         transition-transform duration-(--canva-embed-transition-duration) ease-out;
 }
 
 #canvaEmbedLoadingBackground.canva-loaded::before {
     @apply scale-x-0;
+}
+
+.case-study-button {
+    @apply px-4 py-2 border rounded-md text-sm transition-colors;
+}
+
+.case-study-button:hover {
+    @apply bg-(--blue-default) text-white;
 }

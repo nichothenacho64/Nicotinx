@@ -1,26 +1,53 @@
+"use client";
+
 import CanvaEmbed from "@/components/canva-embed";
-import { CanvaEmbedSkeleton } from "@/components/skeletons";
-import { CASE_STUDIES_LINK } from "@/lib/constants";
-import { Suspense } from "react";
+// import { CASE_STUDIES } from "@/lib/navigation";
+import { CaseStudyKey } from "@/lib/definitions";
+import { getCaseStudy } from "@/lib/utils";
+import { useState } from "react";
+import { CaseStudyButtons } from "@/ui/buttons";
 
 export default function About() {
+    const [active, setActive] = useState<CaseStudyKey>("HercuLabs");
+
+    const { embedLink, colour } = getCaseStudy(active);
+
+    console.log(embedLink);
+
     return (
         <div>
             <main>
-                <h1>About</h1><br />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla aliquam distinctio natus placeat laboriosam, eveniet accusamus cum doloremque, deserunt sit minus ratione provident vero quis hic animi nam accusantium consequuntur nisi neque? Commodi doloremque assumenda quibusdam voluptatum tempora ipsam reprehenderit facere modi placeat! Quidem accusantium neque dolores labore odio!</p>
-                <br />
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus minus voluptas ex ullam adipisci, debitis blanditiis optio ratione magnam voluptatum placeat veniam voluptatibus culpa consequatur cupiditate! Magni, quo assumenda! Impedit aliquam, vero necessitatibus beatae asperiores totam odio libero tempore voluptatibus praesentium? Dolorum, nobis eius et veritatis, eaque doloribus explicabo architecto repellat porro velit minima error est! Laborum facere voluptatibus adipisci, eius, doloremque quas esse vel earum animi quos deserunt necessitatibus maiores molestias saepe nisi eveniet deleniti odio impedit omnis libero quibusdam obcaecati sint aspernatur dolores. Maiores nesciunt sunt at cupiditate! Dicta distinctio natus assumenda ex, accusantium ipsum incidunt laboriosam nesciunt.</p>
-                <br />
+                <h1>About me</h1><br />
+                <p>
+                    Hello! I am Nico, a University student studying both <strong>Interaction Design and Digital Music</strong>,
+                    and everything in between like sound design! I primarily work as a UI/UX designer based in Sydney,
+                    in both professional and university-based settings, and as my computer science brother's personal
+                    interface design assistant for his high-quality personal projects on GitHub (against my own will).<br />
+                </p><br />
+                <p>
+
+                    I am interested in UI/UX design as I have always been fascinated by the middle-ground between technical
+                    and creative technology-related disciplines; I am hence able to employ <strong>critical thinking, innovation,
+                        and creativity</strong> in a new and emerging field that has so much potential to drive positive societal change.<br />
+                </p><br />
+                <p>
+                    Outside of my academic and professional life, I love to compose solo piano works and <strong>obsessively listen
+                        to the music of <a className="text-blue-default hover:underline" href="https://www.sorabji-archive.co.uk/biography/biography.php">Kaikhosru Shapurji Sorabji</a>.</strong>
+                </p><br />
                 <h1>Case studies</h1><br />
-                <Suspense fallback={<CanvaEmbedSkeleton />}>
-                    <CanvaEmbed
-                        embedUrl={CASE_STUDIES_LINK}
-                        title="Case Studies"
+                <section className="space-y-6">
+                    <CaseStudyButtons
+                        active={active}
+                        setActive={setActive}
                     />
-                </Suspense>
+
+                    <CanvaEmbed
+                        embedUrl={embedLink}
+                        title="Case Studies"
+                        colour={colour}
+                    />
+                </section>
                 <br />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt illum quo itaque impedit nulla, possimus, repudiandae suscipit commodi mollitia cumque nihil laboriosam consequuntur sapiente veniam ullam adipisci eveniet maiores? Cupiditate.</p>
             </main>
         </div>
     );

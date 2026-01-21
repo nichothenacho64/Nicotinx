@@ -7,3 +7,5 @@ export type NavLink = {
     label: string;
     href: string;
 };
+
+export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
