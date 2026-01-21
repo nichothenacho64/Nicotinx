@@ -2,7 +2,7 @@ export default function Home() {
 	return (
 		<div>
 			<main>
-				<p>Welcome to My Personal Website</p><br />
+				<h1>Welcome to My Personal Website</h1><br />
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla aliquam distinctio natus placeat laboriosam, eveniet accusamus cum doloremque, deserunt sit minus ratione provident vero quis hic animi nam accusantium consequuntur nisi neque? Commodi doloremque assumenda quibusdam voluptatum tempora ipsam reprehenderit facere modi placeat! Quidem accusantium neque dolores labore odio!</p>
 				<br />
 				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus minus voluptas ex ullam adipisci, debitis blanditiis optio ratione magnam voluptatum placeat veniam voluptatibus culpa consequatur cupiditate! Magni, quo assumenda! Impedit aliquam, vero necessitatibus beatae asperiores totam odio libero tempore voluptatibus praesentium? Dolorum, nobis eius et veritatis, eaque doloribus explicabo architecto repellat porro velit minima error est! Laborum facere voluptatibus adipisci, eius, doloremque quas esse vel earum animi quos deserunt necessitatibus maiores molestias saepe nisi eveniet deleniti odio impedit omnis libero quibusdam obcaecati sint aspernatur dolores. Maiores nesciunt sunt at cupiditate! Dicta distinctio natus assumenda ex, accusantium ipsum incidunt laboriosam nesciunt.</p>

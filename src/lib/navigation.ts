@@ -1,7 +1,4 @@
-export type NavLink = {
-    label: string;
-    href: string;
-};
+import type { NavLink } from "@/lib/definitions";
 
 export const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/" },
@@ -12,10 +9,10 @@ export const NAV_LINKS: NavLink[] = [
 export const EXTERNAL_LINKS = {
     github: {
         label: "GitHub",
-        href: "https://github.com",
+        href: "https://github.com/nichothenacho64",
     },
     linkedin: {
         label: "LinkedIn",
-        href: "https://linkedin.com",
+        href: "http://linkedin.com/in/nico-napoli",
     },
-};
+} as const;

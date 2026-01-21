@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NAV_LINKS, EXTERNAL_LINKS } from "@/lib/navigation";
+import { CURRENT_YEAR } from "@/lib/constants";
 
 function FooterLinks() {
     return (
@@ -30,8 +31,6 @@ function FooterLinks() {
 }
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
-
     return (
         <footer id="footer">
             <div className="body-container">
@@ -50,7 +49,7 @@ export default function Footer() {
                 </div>
 
                 <div id="copyrightLabel">
-                    © Nico Napoli {currentYear}. All rights reserved.
+                    © Nico Napoli {CURRENT_YEAR}. All rights reserved.
                 </div>
             </div>
         </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import clsx from "clsx";
 import { NAV_LINKS } from "@/lib/navigation";
 import { getFooterVisibility } from "@/lib/sticky-navbar";
 
@@ -10,10 +11,11 @@ export default function Navbar() {
     return (
         <nav
             id="navbarContainer"
-            className={`transition-opacity duration-300 ${footerIsVisible
+            className={clsx(
+                footerIsVisible
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
-                }`}
+            )}
         >
             <div id="navbar" className="body-container">
                 <div className="font-semibold nav-links-container">
