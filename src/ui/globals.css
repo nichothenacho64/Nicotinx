@@ -2,15 +2,15 @@
 
 :root {
     --blue-default: #0f7bb8;
+    --canva-embed-transition-duration: 1000ms;
 }
 
 body {
-    background-color: #000;
+    background-color: #000; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 body {
     font-family: var(--font-nunito-sans), system-ui, sans-serif;
-    /* padding-inline: 1rem; */
     margin: 0;
     background-color: #fefefe;
 }
@@ -66,7 +66,7 @@ h1 {
 
 #canvaEmbedLoadingBackground {
     @apply absolute inset-0 z-10 flex flex-col items-center justify-center
-        bg-transparent transition-opacity duration-1000 overflow-hidden;
+        bg-transparent transition-opacity duration-(--canva-embed-transition-duration) overflow-hidden;
 }
 
 #canvaEmbedLoadingBackground::before {
@@ -74,7 +74,7 @@ h1 {
     @apply absolute inset-0 -z-10
         bg-(--blue-default)
         origin-right scale-x-100
-        transition-transform duration-1000ms ease-out;
+        transition-transform duration-(--canva-embed-transition-duration) ease-out;
 }
 
 #canvaEmbedLoadingBackground.canva-loaded::before {
