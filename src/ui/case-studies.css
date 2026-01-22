@@ -11,28 +11,26 @@ body {
 }
 
 #loadingSpin {
-    @apply motion-reduce:hidden border-4 border-white/40 border-t-white rounded-full w-16 h-16 animate-spin;
+    @apply w-16 h-16 border-4 border-white/40 border-t-white rounded-full animate-spin motion-reduce:hidden;
 }
 
 #canvaEmbedContainer {
-    @apply relative rounded-xl w-full aspect-video overflow-hidden;
+    @apply relative w-full aspect-video rounded-xl overflow-hidden;
 }
 
 #canvaIframe {
-    @apply block -top-px -left-px absolute border-0 w-[calc(100%+2px)] h-[calc(100%+2px)];
+    @apply absolute -top-px -left-px block w-[calc(100%+2px)] h-[calc(100%+2px)] border-0;
 }
 
 #canvaEmbedLoadingBackground {
     @apply absolute inset-0 z-10 flex flex-col items-center justify-center
-        bg-transparent transition-opacity duration-(--canva-embed-transition-duration) overflow-hidden;
+        bg-transparent overflow-hidden transition-opacity duration-(--canva-embed-transition-duration);
 }
 
 #canvaEmbedLoadingBackground::before {
     content: "";
-    @apply absolute inset-0 -z-10
+    @apply absolute inset-0 -z-10 origin-right scale-x-100
         bg-(--blue-default)
-        origin-right 
-        scale-x-100
         transition-transform duration-(--canva-embed-transition-duration) ease-out;
 }
 
@@ -40,14 +38,15 @@ body {
     @apply scale-x-0;
 }
 
+/* Case Study Buttons */
 .case-study-button-layout {
-    @apply border text-sm transition-colors flex flex-col flex-1 items-start px-6 py-8 rounded-lg min-w-37.5 w-full;
+    @apply flex flex-col flex-1 items-start px-6 py-8 w-full min-w-37.5 rounded-lg
+        border text-sm transition-colors;
 }
 
 .case-study-button {
-    @apply relative overflow-hidden border rounded-lg
-        flex flex-col items-start text-white
-        transition-colors z-0 bg-black bg-cover bg-center;
+    @apply relative flex flex-col items-start z-0 overflow-hidden border rounded-lg
+        text-white transition-colors bg-black bg-cover bg-center;
 
     background-image:
         linear-gradient(
@@ -63,12 +62,9 @@ body {
 
 .case-study-button::before {
     content: "";
-    @apply absolute inset-0
+    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50
         bg-(--case-study-colour)
-        origin-right
-        scale-x-0
-        z-0
-        transition-transform duration-300 ease-out opacity-50;
+        transition-transform duration-300 ease-out;
 }
 
 .case-study-button:hover::before {

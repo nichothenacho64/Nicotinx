@@ -33,7 +33,7 @@ export default function Navbar() {
 
                 <div className="flex gap-20 text-lg nav-links-container">
                     {NAV_LINKS.map((link) => (
-                        <Link key={link.href} href={link.href}>
+                        <Link key={link.href} href={link.href} className="nav-link">
                             {link.label}
                         </Link>
                     ))}
