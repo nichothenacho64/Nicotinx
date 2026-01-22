@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+    --case-study-image: none;
+    --case-study-colour: #111;
+    --case-study-image-overlay: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
+}
+
+#loadingSpin {
+    @apply motion-reduce:hidden border-4 border-white/40 border-t-white rounded-full w-16 h-16 animate-spin;
+}
+
+#canvaEmbedContainer {
+    @apply relative rounded-xl w-full aspect-video overflow-hidden;
+}
+
+#canvaIframe {
+    @apply block -top-px -left-px absolute border-0 w-[calc(100%+2px)] h-[calc(100%+2px)];
+}
+
+#canvaEmbedLoadingBackground {
+    @apply absolute inset-0 z-10 flex flex-col items-center justify-center
+        bg-transparent transition-opacity duration-(--canva-embed-transition-duration) overflow-hidden;
+}
+
+#canvaEmbedLoadingBackground::before {
+    content: "";
+    @apply absolute inset-0 -z-10
+        bg-(--blue-default)
+        origin-right 
+        scale-x-100
+        transition-transform duration-(--canva-embed-transition-duration) ease-out;
+}
+
+#canvaEmbedLoadingBackground.canva-loaded::before {
+    @apply scale-x-0;
+}
+
+.case-study-button-layout {
+    @apply border text-sm transition-colors flex flex-col flex-1 items-start px-6 py-8 rounded-lg min-w-37.5 w-full;
+}
+
+.case-study-button {
+    @apply relative overflow-hidden border rounded-lg
+        flex flex-col items-start text-white
+        transition-colors z-0 bg-black bg-cover bg-center;
+
+    background-image:
+        linear-gradient(
+            var(--case-study-image-overlay),
+            var(--case-study-image-overlay)
+        ),
+        var(--case-study-image);
+}
+
+.case-study-button > * {
+    @apply relative z-10;
+}
+
+.case-study-button::before {
+    content: "";
+    @apply absolute inset-0
+        bg-(--case-study-colour)
+        origin-right
+        scale-x-0
+        z-0
+        transition-transform duration-300 ease-out opacity-50;
+}
+
+.case-study-button:hover::before {
+    @apply scale-x-100 origin-left;
+}
+
+.case-study-button[data-active="true"] {
+    background: none;
+}
+
+.case-study-button[data-active="true"]::before {
+    @apply scale-x-100 origin-left opacity-100;
+}

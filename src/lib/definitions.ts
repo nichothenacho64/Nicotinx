@@ -9,3 +9,10 @@ export type NavLink = {
 };
 
 export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
+
+export type CaseStudy = {
+    page: number;
+    colour: string;
+    image: string;
+    description: string;
+};

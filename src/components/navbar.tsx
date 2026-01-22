@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
-import { NAV_LINKS } from "@/lib/constants";
+import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility } from "@/lib/sticky-navbar";
 
 export default function Navbar() {
@@ -19,7 +20,15 @@ export default function Navbar() {
         >
             <div id="navbar" className="body-container">
                 <div className="font-semibold nav-links-container">
-                    <Link href="/">Nico</Link>
+                    <Link href="/">
+                        <Image
+                            src="/icon.svg"
+                            alt="Site logo"
+                            width={LOGO_SIZE_PX}
+                            height={LOGO_SIZE_PX}
+                            priority
+                        />
+                    </Link>
                 </div>
 
                 <div className="flex gap-20 text-lg nav-links-container">
