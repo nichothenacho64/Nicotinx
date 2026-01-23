@@ -1,6 +1,5 @@
 import { CASE_STUDIES } from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
-import clsx from "clsx";
 
 export function CaseStudyButtons({
     active,
@@ -22,13 +21,13 @@ export function CaseStudyButtons({
                         className="case-study-button case-study-button-layout"
                         style={{
                             "--case-study-image": `url(${CASE_STUDIES[key].image})`,
-                            "--case-study-colour": CASE_STUDIES[key].colour,
+                            "--case-study-primaryColour": CASE_STUDIES[key].primaryColour,
                         } as React.CSSProperties}
                     >
-                        <span className="font-bold text-base">{key}</span>
-                        <span className="my-1 text-sm text-left">
+                        <h3 className="case-study-subheading">{key}</h3>
+                        <p className="my-1 text-xs text-left leading-relaxed">
                             {CASE_STUDIES[key].description}
-                        </span>
+                        </p>
                     </button>
                 );
             })}

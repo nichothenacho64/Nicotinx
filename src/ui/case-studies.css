@@ -2,7 +2,7 @@
 
 :root {
     --case-study-image: none;
-    --case-study-colour: #111;
+    --case-study-primaryColour: #333;
     --case-study-image-overlay: rgba(0, 0, 0, 0.5);
 }
 
@@ -38,14 +38,17 @@ body {
     @apply scale-x-0;
 }
 
-/* Case Study Buttons */
+#caseStudyLinksPanel {
+    @apply space-y-4 p-4 border rounded-xl;
+}
+
 .case-study-button-layout {
-    @apply flex flex-col flex-1 items-start px-6 py-8 w-full min-w-37.5 rounded-lg
+    @apply flex flex-col flex-1 items-start px-6 py-6 w-full min-w-37.5 rounded-lg
         border text-sm transition-colors;
 }
 
 .case-study-button {
-    @apply relative flex flex-col items-start z-0 overflow-hidden border rounded-lg
+    @apply relative z-0 overflow-hidden border rounded-lg
         text-white transition-colors bg-black bg-cover bg-center;
 
     background-image:
@@ -56,6 +59,10 @@ body {
         var(--case-study-image);
 }
 
+.case-study-button:hover {
+    @apply cursor-pointer;
+}
+
 .case-study-button > * {
     @apply relative z-10;
 }
@@ -63,7 +70,7 @@ body {
 .case-study-button::before {
     content: "";
     @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50
-        bg-(--case-study-colour)
+        bg-(--case-study-primaryColour)
         transition-transform duration-300 ease-out;
 }
 
@@ -77,4 +84,12 @@ body {
 
 .case-study-button[data-active="true"]::before {
     @apply scale-x-100 origin-left opacity-100;
+}
+
+.case-study-subheading {
+    @apply font-bold text-base;
+}
+
+.case-study-external-link {
+    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
 }

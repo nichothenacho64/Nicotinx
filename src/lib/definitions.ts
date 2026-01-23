@@ -1,9 +1,9 @@
-export type CanvaEmbedProps = {
-    embedUrl: string;
-    title?: string;
+export type NavLink = {
+    label: string;
+    href: string;
 };
 
-export type NavLink = {
+export type CaseStudyLink = {
     label: string;
     href: string;
 };
@@ -12,7 +12,14 @@ export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
 
 export type CaseStudy = {
     page: number;
-    colour: string;
+    primaryColour: string;
     image: string;
     description: string;
+    links: CaseStudyLink[];
+};
+
+export type CanvaEmbedProps = {
+    title: string;
+    embedUrl: string;
+    primaryColour: string;
 };

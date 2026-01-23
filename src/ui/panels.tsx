@@ -1,0 +1,33 @@
+import { CASE_STUDIES } from "@/lib/constants";
+import { CaseStudyKey } from "@/lib/definitions";
+import Link from "next/link";
+
+export function CaseStudyLinksPanel({ active }: { active: CaseStudyKey }) {
+    const { primaryColour, links } = CASE_STUDIES[active];
+
+    if (!links?.length) return null;
+
+    return (
+        <div id="caseStudyLinksPanel" style={{ borderColor: primaryColour }}>
+            <h3 className="case-study-subheading">
+                {active} links
+            </h3>
+
+            <ul className="flex flex-wrap gap-3">
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <Link
+                            href={link.href}
+                            className="case-study-external-link"
+                            style={{
+                                backgroundColor: primaryColour,
+                            }}
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}

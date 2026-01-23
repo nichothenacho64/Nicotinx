@@ -1,15 +1,15 @@
 "use client";
 
-import { CanvaEmbedProps } from "@/lib/definitions";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { DOTS_INTERVAL, MAX_DOTS } from "@/lib/constants";
+import { CanvaEmbedProps } from "@/lib/definitions";
 
 export default function CanvaEmbed({
+    title,
     embedUrl,
-    title = "Case studies",
-    colour,
-}: CanvaEmbedProps & { colour: string }) {
+    primaryColour,
+}: CanvaEmbedProps) {
     const [loaded, setLoaded] = useState(false);
     const [dots, setDots] = useState(0);
 
@@ -31,7 +31,7 @@ export default function CanvaEmbed({
     return (
         <div
             id="canvaEmbedContainer"
-            style={{ "--blue-default": colour } as React.CSSProperties}
+            style={{ "--blue-default": primaryColour } as React.CSSProperties}
         >
             <div
                 id="canvaEmbedLoadingBackground"
@@ -45,14 +45,14 @@ export default function CanvaEmbed({
                 <div id="loadingSpin" />
 
                 <p className="py-3 text-white text-lg tracking-wide">
-                    Loading{".".repeat(dots)}
+                    Preparing {title}{".".repeat(dots)}
                 </p>
             </div>
 
             <iframe
                 id="canvaIframe"
                 src={embedUrl}
-                title={title}
+                title="Case Studies"
                 allow="fullscreen"
                 onLoad={() => requestAnimationFrame(() => setLoaded(true))}
             />

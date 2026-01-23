@@ -1,11 +1,12 @@
-import { CASE_STUDIES, CASE_STUDIES_LINK } from "@/lib/constants";
+import { CASE_STUDIES, CANVA_LINK } from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
 
-export function getCaseStudy(variant: CaseStudyKey) {
-    const { page, colour } = CASE_STUDIES[variant];
+export function getCaseStudy(title: CaseStudyKey) {
+    const { page, primaryColour } = CASE_STUDIES[title];
 
     return {
-        embedLink: `${CASE_STUDIES_LINK}#page-${page}`,
-        colour,
+        title,
+        embedLink: `${CANVA_LINK}#page-${page}`,
+        primaryColour,
     };
 }
