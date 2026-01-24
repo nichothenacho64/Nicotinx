@@ -15,21 +15,22 @@ export default function Work() {
     return (
         <div>
             <main>
-                <h1>Case studies</h1><br />
-                <section className="space-y-6">
-                    <CaseStudyButtons
-                        active={active}
-                        setActive={setActive}
-                    />
+                <section>
+                    <h1>Case studies</h1>
+                    <div className="space-y-6">
+                        <CaseStudyButtons
+                            active={active}
+                            setActive={setActive}
+                        />
 
-                    <CanvaEmbed
-                        title={title}
-                        embedUrl={embedLink}
-                        primaryColour={primaryColour}
-                    />
-                    <CaseStudyLinksPanel active={active} />
+                        <CanvaEmbed
+                            title={title}
+                            embedUrl={embedLink}
+                            primaryColour={primaryColour}
+                        />
+                        <CaseStudyLinksPanel active={active} />
+                    </div>
                 </section>
-                <br />
             </main>
         </div>
     );

@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 body {
-    background-color: #fff;
+    background-color: #eee;
 }
 
 #footer {
     @apply relative overflow-hidden;
+}
+
+#footer:hover #copyrightLabel {
+    @apply text-gray-200 border-gray-200 transition-colors duration-1500;
 }
 
 #footer::before {

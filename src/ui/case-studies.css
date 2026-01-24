@@ -4,6 +4,9 @@
     --case-study-image: none;
     --case-study-primaryColour: #333;
     --case-study-image-overlay: rgba(0, 0, 0, 0.5);
+    --button-click-transition-duration: 300ms;
+    --button-active-transition-duration: 1000ms;
+    --canva-embed-transition-duration: 1000ms;
 }
 
 body {
@@ -31,7 +34,7 @@ body {
     content: "";
     @apply absolute inset-0 -z-10 origin-right scale-x-100
         bg-(--blue-default)
-        transition-transform duration-(--canva-embed-transition-duration) ease-out;
+        transition-transform ease-out duration-(--canva-embed-transition-duration);
 }
 
 #canvaEmbedLoadingBackground.canva-loaded::before {
@@ -69,21 +72,15 @@ body {
 
 .case-study-button::before {
     content: "";
-    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50
-        bg-(--case-study-primaryColour)
-        transition-transform duration-300 ease-out;
+    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50 bg-(--case-study-primaryColour) transition-transform duration-(--button-click-transition-duration) ease-out;
 }
 
 .case-study-button:hover::before {
     @apply scale-x-100 origin-left;
 }
 
-.case-study-button[data-active="true"] {
-    background: none;
-}
-
 .case-study-button[data-active="true"]::before {
-    @apply scale-x-100 origin-left opacity-100;
+    @apply scale-x-100 origin-left opacity-100 transition-opacity duration-(--button-active-transition-duration) ease-out;
 }
 
 .case-study-subheading {

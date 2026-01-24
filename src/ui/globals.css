@@ -2,7 +2,8 @@
 
 :root {
     --blue-default: #0f7bb8;
-    --canva-embed-transition-duration: 1000ms;
+    --blue-default-light: #118dd4;
+    --navbar-hover-transition-duration: 300ms;
 }
 
 html,
@@ -11,7 +12,7 @@ body {
 }
 
 body {
-    background-color: #444; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
+    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 body {
@@ -27,6 +28,10 @@ h1,
 
 h1 {
     @apply font-bold text-2xl text-black pb-2;
+}
+
+section {
+    @apply pb-8;
 }
 
 .footer-link:hover {
@@ -68,20 +73,28 @@ h1 {
     @apply text-white/70 transition-colors;
 }
 
-#footer:hover #copyrightLabel {
-    @apply text-gray-200 border-gray-200;
+#aboutMe {
+    @apply flex md:flex-row flex-col items-stretch gap-8 mt-0;
 }
 
 .nav-link {
-    @apply relative inline-block overflow-hidden py-4;
+    @apply relative inline-block overflow-hidden py-4 text-gray-400;
+}
+
+.nav-link:hover {
+    @apply text-white;
+}
+
+.nav-link.active {
+    @apply text-white;
 }
 
 .nav-link::before {
     content: "";
     @apply absolute left-0 right-0 bottom-0 h-[0.25em]
         origin-right scale-x-0
-        transition-transform duration-300 ease-out
-        bg-(--blue-default)
+        transition-transform duration-(--navbar-hover-transition-duration) ease-out
+        bg-(--blue-default-light)
         z-999;
 }
 
@@ -91,4 +104,8 @@ h1 {
 
 .nav-link > span {
     @apply relative z-10;
+}
+
+.footer-heading {
+    @apply font-semibold text-white;
 }

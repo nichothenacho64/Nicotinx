@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility } from "@/lib/sticky-navbar";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");
+    const pathname = usePathname();
 
     return (
         <nav
@@ -33,7 +35,14 @@ export default function Navbar() {
 
                 <div className="flex gap-20 text-lg nav-links-container">
                     {NAV_LINKS.map((link) => (
-                        <Link key={link.href} href={link.href} className="nav-link">
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={clsx(
+                                "nav-link",
+                                pathname === link.href && "active"
+                            )}
+                        >
                             {link.label}
                         </Link>
                     ))}
@@ -42,3 +51,4 @@ export default function Navbar() {
         </nav>
     );
 }
+

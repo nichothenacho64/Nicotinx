@@ -5,7 +5,7 @@ function FooterLinks() {
     return (
         <div className="flex gap-12 text-sm">
             <div className="flex flex-col gap-2">
-                <p className="font-semibold text-white">Pages</p>
+                <h4 className="footer-heading">Pages</h4>
 
                 {NAV_LINKS.map((link) => (
                     <Link key={link.href} href={link.href} className="footer-link">
@@ -15,7 +15,7 @@ function FooterLinks() {
             </div>
 
             <div className="flex flex-col gap-2">
-                <p className="font-semibold text-white">Other links</p>
+                <h4 className="footer-heading">Other links</h4>
 
                 <Link href={EXTERNAL_LINKS.github.href} className="footer-link">
                     {EXTERNAL_LINKS.github.label}
