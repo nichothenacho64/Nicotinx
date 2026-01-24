@@ -38,3 +38,5 @@ next-env.d.ts
 
 # ! custom stuff
 public/images/nico_photo.jpg
+eslint.config.mjs
+postcss.config.mjs

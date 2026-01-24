@@ -15,7 +15,7 @@ function FooterLinks() {
             </div>
 
             <div className="flex flex-col gap-2">
-                <h4 className="footer-heading">Other links</h4>
+                <h4 className="footer-heading">Profiles</h4>
 
                 <Link href={EXTERNAL_LINKS.github.href} className="footer-link">
                     {EXTERNAL_LINKS.github.label}
@@ -40,7 +40,7 @@ export default function Footer() {
                         </p>
                         <p className="mt-2 max-w-md text-sm">
                             Personal website and portfolio built by Nico, me,
-                            myself, and I
+                            myself, and I using Next.js and deployed with Vercel
                         </p>
                     </div>
 

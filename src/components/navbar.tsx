@@ -5,7 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
-import { getFooterVisibility } from "@/lib/sticky-navbar";
+import { getFooterVisibility } from "@/lib/utils";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");

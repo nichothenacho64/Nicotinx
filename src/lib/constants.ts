@@ -14,12 +14,6 @@ const PRIMARY_BLUE = "#0f7bb8";
 const PRIMARY_MAGENTA = "#c0518c";
 const PRIMARY_INDIGO = "#7c71c7";
 
-export const PRIMARY_primaryColourS = {
-    blue: PRIMARY_BLUE,
-    magenta: PRIMARY_MAGENTA,
-    indigo: PRIMARY_INDIGO,
-} as const;
-
 export const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/" },
     { label: "My work", href: "/work" },

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { NavigateToMyWorkPage } from "@/ui/buttons";
 
 export default function Home() {
 	return (
@@ -76,6 +77,8 @@ export default function Home() {
 
 					<p>I’m excited to be a part of the future of design!</p>
 					<br />
+
+					<NavigateToMyWorkPage />
 				</section>
 			</main>
 		</div>
