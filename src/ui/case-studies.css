@@ -86,7 +86,3 @@ body {
 .case-study-subheading {
     @apply font-bold text-base;
 }
-
-.case-study-external-link {
-    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
-}

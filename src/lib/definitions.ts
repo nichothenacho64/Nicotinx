@@ -23,3 +23,8 @@ export type CanvaEmbedProps = {
     embedUrl: string;
     primaryColour: string;
 };
+
+export type ContactModalProps = {
+    isOpen: boolean;
+    onClose: () => void;
+};

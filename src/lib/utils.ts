@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { CASE_STUDIES, CANVA_LINK } from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
@@ -31,4 +33,25 @@ export function getFooterVisibility(footerId: string = "footer") {
     }, [footerId]);
 
     return isVisible;
+}
+
+export function lockBodyScroll(isLocked: boolean) {
+    useEffect(() => {
+        if (!isLocked) {
+            document.body.style.overflow = "";
+            document.body.style.paddingRight = "";
+            return;
+        }
+
+        const scrollbarWidth =
+            window.innerWidth - document.documentElement.clientWidth;
+
+        document.body.style.overflow = "hidden";
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+        return () => {
+            document.body.style.overflow = "";
+            document.body.style.paddingRight = "";
+        };
+    }, [isLocked]);
 }

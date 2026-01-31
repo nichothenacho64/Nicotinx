@@ -5,50 +5,72 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
-import { getFooterVisibility } from "@/lib/utils";
+import { getFooterVisibility, lockBodyScroll } from "@/lib/utils";
+import ContactModal from "@/components/contact-modal";
+import { useState } from "react";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");
     const pathname = usePathname();
+    const [isContactOpen, setIsContactOpen] = useState(false);
+
+    lockBodyScroll(isContactOpen);
 
     return (
-        <nav
-            id="navbarContainer"
-            className={clsx(
-                footerIsVisible
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-            )}
-        >
-            <div id="navbar" className="body-container">
-                <div className="font-semibold nav-links-container">
-                    <Link href="/">
-                        <Image
-                            src="/icon.svg"
-                            alt="Site logo"
-                            width={LOGO_SIZE_PX}
-                            height={LOGO_SIZE_PX}
-                            priority
-                        />
-                    </Link>
-                </div>
-
-                <div className="flex gap-20 text-lg nav-links-container">
-                    {NAV_LINKS.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={clsx(
-                                "nav-link",
-                                pathname === link.href && "active"
-                            )}
-                        >
-                            {link.label}
+        <>
+            <nav
+                id="navbarContainer"
+                className={clsx(
+                    footerIsVisible
+                        ? "opacity-100"
+                        : "opacity-0 pointer-events-none"
+                )}
+            >
+                <div id="navbar" className="body-container">
+                    <div className="font-semibold nav-links-container">
+                        <Link href="/">
+                            <Image
+                                src="/icon.svg"
+                                alt="Site logo"
+                                width={LOGO_SIZE_PX}
+                                height={LOGO_SIZE_PX}
+                                priority
+                            />
                         </Link>
-                    ))}
+                    </div>
+
+                    <div className="flex gap-20 text-lg nav-links-container">
+                        {NAV_LINKS.map((link) =>
+                            link.label === "Contact" ? (
+                                <button
+                                    key={link.href}
+                                    onClick={() => setIsContactOpen(true)}
+                                    className="text-left nav-link"
+                                >
+                                    {link.label}
+                                </button>
+                            ) : (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={clsx(
+                                        "nav-link",
+                                        pathname === link.href && "active"
+                                    )}
+                                >
+                                    {link.label}
+                                </Link>
+                            )
+                        )}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
+            <ContactModal
+                isOpen={isContactOpen}
+                onClose={() => setIsContactOpen(false)}
+            />
+        </>
     );
 }
 

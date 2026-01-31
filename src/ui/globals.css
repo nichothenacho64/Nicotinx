@@ -52,6 +52,10 @@ section {
     @apply mx-auto max-w-6xl p-5;
 }
 
+.small-button {
+    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
+}
+
 #navbar {
     @apply flex justify-between items-center text-white py-0;
 }

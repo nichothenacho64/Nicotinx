@@ -18,7 +18,7 @@ export function CaseStudyLinksPanel({ active }: { active: CaseStudyKey }) {
                     <li key={link.href}>
                         <Link
                             href={link.href}
-                            className="case-study-external-link"
+                            className="small-button"
                             style={{
                                 backgroundColor: primaryColour,
                             }}
