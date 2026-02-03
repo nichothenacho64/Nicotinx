@@ -3,7 +3,7 @@ import { NavigateToMyWorkPage } from "@/ui/buttons";
 
 export default function Home() {
 	return (
-		<main>
+		<>
 			<section id="aboutMe">
 				<div className="w-full md:w-1/2">
 					<h1>About me</h1>
@@ -79,6 +79,6 @@ export default function Home() {
 
 				<NavigateToMyWorkPage />
 			</section>
-		</main>
+		</>
 	);
 }

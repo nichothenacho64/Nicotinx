@@ -6,15 +6,15 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility, lockBodyScroll } from "@/lib/utils";
-import ContactModal from "@/components/contact-modal";
+import Contact from "@/components/contact";
 import { useState } from "react";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");
     const pathname = usePathname();
-    const [isContactOpen, setIsContactOpen] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
 
-    lockBodyScroll(isContactOpen);
+    lockBodyScroll(contactOpen);
 
     return (
         <>
@@ -44,8 +44,8 @@ export default function Navbar() {
                             link.label === "Contact" ? (
                                 <button
                                     key={link.href}
-                                    onClick={() => setIsContactOpen(true)}
-                                    className="text-left nav-link"
+                                    onClick={() => setContactOpen(true)}
+                                    className="text-left cursor-pointer nav-link"
                                 >
                                     {link.label}
                                 </button>
@@ -66,9 +66,9 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <ContactModal
-                isOpen={isContactOpen}
-                onClose={() => setIsContactOpen(false)}
+            <Contact
+                isOpen={contactOpen}
+                onClose={() => setContactOpen(false)}
             />
         </>
     );

@@ -5,7 +5,7 @@ import { CaseStudyKey } from "@/lib/definitions";
 import { getCaseStudy } from "@/lib/utils";
 import { useState } from "react";
 import { CaseStudyButtons } from "@/ui/buttons";
-import { CaseStudyLinksPanel } from "@/ui/panels";
+import { CaseStudyLinksModal } from "@/ui/modals";
 
 export default function Work() {
     const [active, setActive] = useState<CaseStudyKey>("HercuLabs");
@@ -13,23 +13,21 @@ export default function Work() {
     const { title, embedLink, primaryColour } = getCaseStudy(active);
 
     return (
-        <main>
-            <section>
-                <h1>Case studies</h1>
-                <div className="space-y-6">
-                    <CaseStudyButtons
-                        active={active}
-                        setActive={setActive}
-                    />
+        <section>
+            <h1>Case studies</h1>
+            <div className="space-y-6">
+                <CaseStudyButtons
+                    active={active}
+                    setActive={setActive}
+                />
 
-                    <CanvaEmbed
-                        title={title}
-                        embedUrl={embedLink}
-                        primaryColour={primaryColour}
-                    />
-                    <CaseStudyLinksPanel active={active} />
-                </div>
-            </section>
-        </main>
+                <CanvaEmbed
+                    title={title}
+                    embedUrl={embedLink}
+                    primaryColour={primaryColour}
+                />
+                <CaseStudyLinksModal active={active} />
+            </div>
+        </section>
     );
 }

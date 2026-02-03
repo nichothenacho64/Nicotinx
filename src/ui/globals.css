@@ -14,7 +14,7 @@ body {
 body {
     font-family: var(--font-nunito-sans), system-ui, sans-serif;
     margin: 0;
-    background-color: #eee; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
+    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 h1,
@@ -50,7 +50,7 @@ section {
 }
 
 .small-button {
-    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
+    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity cursor-pointer;
 }
 
 #navbar {

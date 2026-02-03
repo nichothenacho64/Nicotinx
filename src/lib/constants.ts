@@ -1,14 +1,18 @@
 import type { CaseStudy, NavLink } from "@/lib/definitions";
-import * as CaseStudyLinks from "@/lib/case-study-links";
+import * as CaseStudyLinksModal from "@/lib/case-study-links";
 
 export const CURRENT_YEAR = new Date().getFullYear();
 
 export const CANVA_LINK = "https://www.canva.com/design/DAG_B3YjmSA/view?embed";
 
+export const PIPEDREAM_WEBHOOK_URL = "https://eop2bj23x0rc41m.m.pipedream.net";
+
 export const DOTS_INTERVAL = 500;
 export const MAX_DOTS = 3;
 
 export const LOGO_SIZE_PX = 40;
+
+export const MESSAGE_ROWS = 4;
 
 const PRIMARY_BLUE = "#0f7bb8";
 const PRIMARY_MAGENTA = "#c0518c";
@@ -41,11 +45,11 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         links: [
             {
                 label: "Annotated flows (Figma)",
-                href: CaseStudyLinks.HERCULABS_ANNOTATED_FLOWS_LINK,
+                href: CaseStudyLinksModal.HERCULABS_ANNOTATED_FLOWS_LINK,
             },
             {
                 label: "Figma high-fidelity prototype",
-                href: CaseStudyLinks.HERCULABS_HIFI_PROTOTYPE_LINK,
+                href: CaseStudyLinksModal.HERCULABS_HIFI_PROTOTYPE_LINK,
             },
         ],
     },
@@ -58,15 +62,15 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         links: [
             {
                 label: "Protoype demonstration",
-                href: CaseStudyLinks.SCRUB_PROTOTYPE_DEMO_LINK,
+                href: CaseStudyLinksModal.SCRUB_PROTOTYPE_DEMO_LINK,
             },
             {
                 label: "Figma high-fidelity prototype (kiosk)",
-                href: CaseStudyLinks.SCRUB_KIOSK_HIFI_LINK,
+                href: CaseStudyLinksModal.SCRUB_KIOSK_HIFI_LINK,
             },
             {
                 label: "Figma high-fidelity prototype (smartphone app)",
-                href: CaseStudyLinks.SCRUB_APP_HIFI_LINK,
+                href: CaseStudyLinksModal.SCRUB_APP_HIFI_LINK,
             },
         ],
     },
@@ -79,11 +83,11 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         links: [
             {
                 label: "Figma high-fidelity prototype",
-                href: CaseStudyLinks.RANDOM_REMINDER_HIFI_LINK,
+                href: CaseStudyLinksModal.RANDOM_REMINDER_HIFI_LINK,
             },
             {
                 label: "GitHub",
-                href: CaseStudyLinks.RANDOM_REMINDER_GITHUB_LINK,
+                href: CaseStudyLinksModal.RANDOM_REMINDER_GITHUB_LINK,
             },
         ],
     },

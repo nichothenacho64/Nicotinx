@@ -41,7 +41,7 @@ body {
     @apply scale-x-0;
 }
 
-#caseStudyLinksPanel {
+#caseStudyLinksModal {
     @apply space-y-4 p-4 border rounded-xl;
 }
 

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import clsx from "clsx";
-import { DOTS_INTERVAL, MAX_DOTS } from "@/lib/constants";
 import { CanvaEmbedProps } from "@/lib/definitions";
+import { useAnimatedDots } from "@/lib/utils";
 
 export default function CanvaEmbed({
     title,
@@ -11,22 +11,12 @@ export default function CanvaEmbed({
     primaryColour,
 }: CanvaEmbedProps) {
     const [loaded, setLoaded] = useState(false);
-    const [dots, setDots] = useState(0);
+
+    const dots = useAnimatedDots(!loaded);
 
     useEffect(() => {
         setLoaded(false);
-        setDots(0);
     }, [embedUrl]);
-
-    useEffect(() => {
-        if (loaded) return;
-
-        const interval = setInterval(() => {
-            setDots((previousDots) => (previousDots + 1) % (MAX_DOTS + 1));
-        }, DOTS_INTERVAL);
-
-        return () => clearInterval(interval);
-    }, [loaded]);
 
     return (
         <div
@@ -45,7 +35,8 @@ export default function CanvaEmbed({
                 <div id="loadingSpin" />
 
                 <p className="py-3 text-white text-lg tracking-wide">
-                    Preparing {title}{".".repeat(dots)}
+                    Preparing {title}
+                    {".".repeat(dots)}
                 </p>
             </div>
 

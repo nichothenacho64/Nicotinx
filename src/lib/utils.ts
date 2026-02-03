@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CASE_STUDIES, CANVA_LINK } from "@/lib/constants";
+import {
+    CASE_STUDIES,
+    CANVA_LINK,
+    DOTS_INTERVAL,
+    MAX_DOTS,
+} from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
 
 export function getCaseStudy(title: CaseStudyKey) {
@@ -54,4 +59,23 @@ export function lockBodyScroll(isLocked: boolean) {
             document.body.style.paddingRight = "";
         };
     }, [isLocked]);
+}
+
+export function useAnimatedDots(active: boolean) {
+    const [dots, setDots] = useState(0);
+
+    useEffect(() => {
+        if (!active) {
+            setDots(0);
+            return;
+        }
+
+        const interval = setInterval(() => {
+            setDots((previousDots) => (previousDots + 1) % (MAX_DOTS + 1));
+        }, DOTS_INTERVAL);
+
+        return () => clearInterval(interval);
+    }, [active]);
+
+    return dots;
 }
