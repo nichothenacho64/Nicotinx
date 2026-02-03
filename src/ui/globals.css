@@ -30,6 +30,10 @@ section {
     @apply pb-8;
 }
 
+button:hover {
+    @apply cursor-pointer;
+}
+
 .footer-link:hover {
     @apply text-white;
     text-shadow:
@@ -50,7 +54,7 @@ section {
 }
 
 .small-button {
-    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity cursor-pointer;
+    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
 }
 
 #navbar {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
     CASE_STUDIES,
     CANVA_LINK,
@@ -40,7 +40,7 @@ export function getFooterVisibility(footerId: string = "footer") {
     return isVisible;
 }
 
-export function lockBodyScroll(isLocked: boolean) {
+function lockBodyScroll(isLocked: boolean) {
     useEffect(() => {
         if (!isLocked) {
             document.body.style.overflow = "";
@@ -59,6 +59,21 @@ export function lockBodyScroll(isLocked: boolean) {
             document.body.style.paddingRight = "";
         };
     }, [isLocked]);
+}
+
+export function useContactModal() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const open = useCallback(() => setIsOpen(true), []);
+    const close = useCallback(() => setIsOpen(false), []);
+
+    lockBodyScroll(isOpen);
+
+    return {
+        isOpen,
+        open,
+        close,
+    };
 }
 
 export function useAnimatedDots(active: boolean) {

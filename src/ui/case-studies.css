@@ -62,10 +62,6 @@ body {
         var(--case-study-image);
 }
 
-.case-study-button:hover {
-    @apply cursor-pointer;
-}
-
 .case-study-button > * {
     @apply relative z-10;
 }

@@ -9,7 +9,7 @@ label {
 }
 
 #closeContactModalButton {
-    @apply top-4 right-4 absolute text-gray-400 hover:text-gray-700 cursor-pointer;
+    @apply top-4 right-4 absolute text-gray-400 hover:text-gray-700;
 }
 
 .contact-modal-content {
