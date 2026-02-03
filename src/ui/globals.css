@@ -12,12 +12,9 @@ body {
 }
 
 body {
-    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
-}
-
-body {
     font-family: var(--font-nunito-sans), system-ui, sans-serif;
     margin: 0;
+    background-color: #eee; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 h1,
@@ -65,7 +62,7 @@ section {
 }
 
 #navbarContainer {
-    @apply bg-gray-600 sticky top-0 z-50 transition-opacity duration-300 ease-in;
+    @apply bg-gray-600 sticky top-0 z-50 transition-opacity duration-300 ease-in min-h-15;
 }
 
 #copyrightLabel {

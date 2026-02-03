@@ -22,6 +22,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${nunitoSans.variable} ${dmSans.variable} antialiased`}>
 				<Navbar />
+				<div className="mt-5" />
 				<main className="body-container">
 					{children}
 				</main>

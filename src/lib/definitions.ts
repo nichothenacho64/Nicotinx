@@ -28,3 +28,9 @@ export type ContactModalProps = {
     isOpen: boolean;
     onClose: () => void;
 };
+
+export type ContactFormInput = {
+    name: string;
+    email: string;
+    message: string;
+};

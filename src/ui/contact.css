@@ -12,8 +12,12 @@ label {
     @apply top-4 right-4 absolute text-gray-400 hover:text-gray-700 cursor-pointer;
 }
 
+.contact-modal-content {
+    @apply z-101 relative bg-white shadow-xl p-6 rounded-lg w-full max-w-lg;
+}
+
 .input-field {
-    @apply px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500;
+    @apply px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-(--blue-default-light);
 }
 
 .form-section {

@@ -13,25 +13,23 @@ export default function Work() {
     const { title, embedLink, primaryColour } = getCaseStudy(active);
 
     return (
-        <div>
-            <main>
-                <section>
-                    <h1>Case studies</h1>
-                    <div className="space-y-6">
-                        <CaseStudyButtons
-                            active={active}
-                            setActive={setActive}
-                        />
+        <main>
+            <section>
+                <h1>Case studies</h1>
+                <div className="space-y-6">
+                    <CaseStudyButtons
+                        active={active}
+                        setActive={setActive}
+                    />
 
-                        <CanvaEmbed
-                            title={title}
-                            embedUrl={embedLink}
-                            primaryColour={primaryColour}
-                        />
-                        <CaseStudyLinksPanel active={active} />
-                    </div>
-                </section>
-            </main>
-        </div>
+                    <CanvaEmbed
+                        title={title}
+                        embedUrl={embedLink}
+                        primaryColour={primaryColour}
+                    />
+                    <CaseStudyLinksPanel active={active} />
+                </div>
+            </section>
+        </main>
     );
 }
