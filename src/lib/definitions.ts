@@ -1,14 +1,15 @@
+export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
+
 export type NavLink = {
     label: string;
     href: string;
+    nextText: string;
 };
 
 export type CaseStudyLink = {
     label: string;
     href: string;
 };
-
-export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
 
 export type CaseStudy = {
     page: number;
@@ -53,4 +54,10 @@ export type ContactFormModalProps = {
     };
     dots: number;
     onClose: () => void;
+};
+
+export type ContactContextValue = {
+    isOpen: boolean;
+    open: () => void;
+    close: () => void;
 };

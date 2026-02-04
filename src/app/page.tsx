@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { NavigateToMyWorkPage } from "@/ui/buttons";
+import { NextPageButton } from "@/ui/buttons";
 
 export default function Home() {
 	return (
@@ -36,7 +36,7 @@ export default function Home() {
 							</a>.
 						</strong>
 					</p>
-					<br />
+					<br /><br />
 				</div>
 
 				<div className="relative w-full md:w-1/2 h-64 md:h-auto">
@@ -77,7 +77,7 @@ export default function Home() {
 				<p>I’m excited to be a part of the future of design!</p>
 				<br />
 
-				<NavigateToMyWorkPage />
+				<NextPageButton />
 			</section>
 		</>
 	);

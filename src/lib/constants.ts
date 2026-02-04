@@ -19,9 +19,21 @@ const PRIMARY_MAGENTA = "#c0518c";
 const PRIMARY_INDIGO = "#7c71c7";
 
 export const NAV_LINKS: NavLink[] = [
-    { label: "Home", href: "/" },
-    { label: "My work", href: "/work" },
-    { label: "Contact", href: "mailto:nico.napoli.au@gmail.com" },
+    {
+        label: "Home",
+        href: "/",
+        nextText: "Have a look at some of my work here!",
+    },
+    {
+        label: "My work",
+        href: "/work",
+        nextText: "Like what you see? Send me a message!",
+    },
+    {
+        label: "Contact",
+        href: "mailto:nico.napoli.au@gmail.com",
+        nextText: "",
+    },
 ];
 
 export const EXTERNAL_LINKS = {

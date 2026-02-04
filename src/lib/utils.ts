@@ -7,7 +7,7 @@ import {
     DOTS_INTERVAL,
     MAX_DOTS,
 } from "@/lib/constants";
-import { CaseStudyKey } from "@/lib/definitions";
+import { CaseStudyKey, ContactContextValue } from "@/lib/definitions";
 
 export function getCaseStudy(title: CaseStudyKey) {
     const { page, primaryColour } = CASE_STUDIES[title];
@@ -61,7 +61,7 @@ function lockBodyScroll(isLocked: boolean) {
     }, [isLocked]);
 }
 
-export function useContactModal() {
+export function useContactModal(): ContactContextValue {
     const [isOpen, setIsOpen] = useState(false);
 
     const open = useCallback(() => setIsOpen(true), []);
@@ -69,11 +69,7 @@ export function useContactModal() {
 
     lockBodyScroll(isOpen);
 
-    return {
-        isOpen,
-        open,
-        close,
-    };
+    return { isOpen, open, close };
 }
 
 export function useAnimatedDots(active: boolean) {

@@ -9,8 +9,8 @@ export function useContactForm(onSuccess?: () => void) {
     const [isSending, setIsSending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    async function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
+    async function handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
         setIsSending(true);
 
         try {
@@ -22,7 +22,7 @@ export function useContactForm(onSuccess?: () => void) {
 
             if (!res.ok) throw new Error("Failed to submit contact form");
 
-            setIsSuccess(true); // Show success modal
+            setIsSuccess(true);
             onSuccess?.();
         } finally {
             setIsSending(false);

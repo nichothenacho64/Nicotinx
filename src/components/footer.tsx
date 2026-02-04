@@ -1,50 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { NAV_LINKS, EXTERNAL_LINKS, CURRENT_YEAR } from "@/lib/constants";
-import { useContact } from "@/ui/contact-context";
-
-function FooterLinks() {
-    const { open } = useContact();
-
-    return (
-        <div className="flex gap-12 text-sm">
-            <div className="flex flex-col gap-2">
-                <h4 className="footer-heading">Pages</h4>
-
-                {NAV_LINKS.map((link) =>
-                    link.label === "Contact" ? (
-                        <button
-                            key={link.href}
-                            onClick={open}
-                            className="text-left footer-link"
-                        >
-                            Contact
-                        </button>
-                    ) : (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className="footer-link"
-                        >
-                            {link.label}
-                        </Link>
-                    )
-                )}
-            </div>
-
-            <div className="flex flex-col gap-2">
-                <h4 className="footer-heading">Profiles</h4>
-                <Link href={EXTERNAL_LINKS.github.href} className="footer-link">
-                    {EXTERNAL_LINKS.github.label}
-                </Link>
-                <Link href={EXTERNAL_LINKS.linkedin.href} className="footer-link">
-                    {EXTERNAL_LINKS.linkedin.label}
-                </Link>
-            </div>
-        </div>
-    );
-}
+import { CURRENT_YEAR } from "@/lib/constants";
+import { FooterLinks } from "@/ui/buttons";
 
 export default function Footer() {
     return (

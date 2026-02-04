@@ -1,6 +1,12 @@
-import { CASE_STUDIES } from "@/lib/constants";
+"use client";
+
+import { CASE_STUDIES, EXTERNAL_LINKS, NAV_LINKS } from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
 import Link from "next/link"
+import { useContact } from "@/ui/contact-context";
+import { NextPageLink, NextPageContactTrigger } from "@/ui/sequential-navigation";
+
+import { usePathname } from "next/navigation";
 
 export function CaseStudyButtons({
     active,
@@ -36,30 +42,82 @@ export function CaseStudyButtons({
     );
 }
 
-export function NavigateToMyWorkPage() {
-    return (
-        <Link
-            id="toMyWorkPage"
-            href="/work"
-            className="group inline-flex items-center gap-2"
-        >
-            <span>Have a look at some of my work here!</span>
+export function FooterLinks() {
+    const { open } = useContact();
 
-            <svg
-                id="myWorkPageArrow"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                />
-            </svg>
-        </Link>
+    return (
+        <div className="flex gap-12 text-sm">
+            <div className="flex flex-col gap-2">
+                <h4 className="footer-heading">Pages</h4>
+
+                {NAV_LINKS.map((link) =>
+                    link.label === "Contact" ? (
+                        <button
+                            key={link.href}
+                            onClick={open}
+                            className="text-left footer-link"
+                        >
+                            Contact
+                        </button>
+                    ) : (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className="footer-link"
+                        >
+                            {link.label}
+                        </Link>
+                    )
+                )}
+            </div>
+
+            <div className="flex flex-col gap-2">
+                <h4 className="footer-heading">Profiles</h4>
+                <Link href={EXTERNAL_LINKS.github.href} className="footer-link">
+                    {EXTERNAL_LINKS.github.label}
+                </Link>
+                <Link href={EXTERNAL_LINKS.linkedin.href} className="footer-link">
+                    {EXTERNAL_LINKS.linkedin.label}
+                </Link>
+            </div>
+        </div>
     );
 }
 
+export function NextPageButton({
+    additionalClass,
+}: {
+    additionalClass?: string;
+}) {
+    const pathname = usePathname();
+    const { open } = useContact();
+
+    const currentIndex = NAV_LINKS.findIndex(
+        (link) => link.href === pathname
+    );
+
+    const safeCurrentIndex = currentIndex === -1 ? 0 : currentIndex;
+    const nextIndex =
+        (safeCurrentIndex + 1) % NAV_LINKS.length;
+
+    const currentLink = NAV_LINKS[safeCurrentIndex];
+    const nextLink = NAV_LINKS[nextIndex];
+
+    if (nextLink.label === "Contact") {
+        return (
+            <NextPageContactTrigger
+                text={currentLink.nextText}
+                onClick={open}
+                additionalClass={additionalClass}
+            />
+        );
+    } else {
+        return (
+            <NextPageLink
+                href={nextLink.href}
+                text={currentLink.nextText}
+                additionalClass={additionalClass}
+            />
+        );
+    }
+}

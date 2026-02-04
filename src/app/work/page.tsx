@@ -4,7 +4,7 @@ import CanvaEmbed from "@/components/canva-embed";
 import { CaseStudyKey } from "@/lib/definitions";
 import { getCaseStudy } from "@/lib/utils";
 import { useState } from "react";
-import { CaseStudyButtons } from "@/ui/buttons";
+import { CaseStudyButtons, NextPageButton } from "@/ui/buttons";
 import { CaseStudyLinksModal } from "@/ui/modals";
 
 export default function Work() {
@@ -27,6 +27,7 @@ export default function Work() {
                     primaryColour={primaryColour}
                 />
                 <CaseStudyLinksModal active={active} />
+                <NextPageButton additionalClass={primaryColour} />
             </div>
         </section>
     );

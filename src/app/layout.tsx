@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "@/ui/globals.css";
-import "@/ui/case-studies.css";
-import "@/ui/footer.css";
-import "@/ui/home.css";
-import "@/ui/contact.css";
+import "@/styles/globals.css";
+import "@/styles/case-studies.css";
+import "@/styles/footer.css";
+import "@/styles/home.css";
+import "@/styles/contact.css";
 import { dmSans, nunitoSans } from "@/ui/fonts";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";

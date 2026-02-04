@@ -2,8 +2,7 @@
 
 import { createContext, useContext } from "react";
 import { useContactModal } from "@/lib/utils";
-
-type ContactContextValue = ReturnType<typeof useContactModal>;
+import { ContactContextValue } from "@/lib/definitions";
 
 const ContactContext = createContext<ContactContextValue | null>(null);
 
@@ -17,7 +16,7 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
-export function useContact() {
+export function useContact(): ContactContextValue {
     const context = useContext(ContactContext);
     if (!context) {
         throw new Error("useContact must be used within ContactProvider");
