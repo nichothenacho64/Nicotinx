@@ -5,7 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
-import { getFooterVisibility } from "@/lib/utils";
+import { getFooterVisibility } from "@/lib/page-body";
 import { useContact } from "@/ui/contact-context";
 
 export default function Navbar() {

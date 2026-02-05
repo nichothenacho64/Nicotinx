@@ -9,12 +9,13 @@
 html,
 body {
     overscroll-behavior-y: none;
+    overscroll-behavior: none;
 }
 
 body {
     font-family: var(--font-nunito-sans), system-ui, sans-serif;
     margin: 0;
-    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
+    background-color: #eee; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 h1,

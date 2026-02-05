@@ -27,7 +27,7 @@ export const NAV_LINKS: NavLink[] = [
     {
         label: "My work",
         href: "/work",
-        nextText: "Like what you see? Send me a message!",
+        nextText: "Like what you see? Send me a message and let's have a chat!",
     },
     {
         label: "Contact",
