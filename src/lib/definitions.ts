@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
 
 export type NavLink = {
@@ -9,6 +11,12 @@ export type NavLink = {
 export type CaseStudyLink = {
     label: string;
     href: string;
+};
+
+export type ScrollySectionProps = {
+    children: ReactNode;
+    index: number;
+    isLast?: boolean;
 };
 
 export type CaseStudy = {

@@ -6,7 +6,7 @@ import { FooterLinks } from "@/ui/buttons";
 export default function Footer() {
     return (
         <footer id="footer">
-            <div className="body-container">
+            <div className="py-5 body-container">
                 <div className="flex md:flex-row flex-col md:justify-between gap-8">
                     <div>
                         <p className="font-semibold text-white text-lg">

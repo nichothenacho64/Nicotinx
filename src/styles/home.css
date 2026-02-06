@@ -1,23 +1,50 @@
 @import "tailwindcss";
 
-#aboutMe {
+.responsive-section {
     @apply flex md:flex-row flex-col items-stretch gap-8 mt-0;
 }
 
-@keyframes wiggle {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(3px);
-    }
-    50% {
-        transform: translateX(0);
-    }
-    75% {
-        transform: translateX(3px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+html,
+body {
+    @apply snap-y snap-mandatory scroll-smooth;
+    scroll-padding-top: var(--navbar-height);
+    scroll-padding-bottom: var(--footer-height);
+}
+
+.scroll-snap-section {
+    @apply snap-start h-screen min-h-screen flex;
+    scroll-margin-top: var(--navbar-height);
+}
+
+.scrolly-inner {
+    @apply flex-1 flex items-start pt-(--navbar-height);
+}
+
+.scrolly-content {
+    @apply transition-[opacity,transform] duration-1600 ease-out;
+}
+
+.inner-scrollable-section {
+    @apply flex flex-col justify-start items-start transition-all duration-3000 ease-out;
+}
+
+.scrollable-section,
+.scrollable-section-tail {
+    @apply snap-start flex flex-col scroll-mt-[3.75em] pb-0; /* test border: border-4 border-(--blue-default) box-border */
+}
+
+.scrollable-section {
+    @apply h-[calc(100dvh-var(--navbar-height))];
+}
+
+.scrollable-section-tail {
+    @apply snap-end min-h-[calc(100dvh-var(--navbar-height)-var(--footer-height))];
+}
+
+.inner-scrollable-section[data-entered="true"] {
+    @apply opacity-100 translate-y-0;
+}
+
+.inner-scrollable-section[data-entered="false"] {
+    @apply opacity-0 translate-y-3;
 }

@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ContactRoot from "@/app/contact-root";
 import { ContactProvider } from "@/ui/contact-context";
+import ScrollToTop from "@/ui/scroll-to-top";
 
 export const metadata: Metadata = {
 	title: "Nico Napoli | UX/UI Designer website",
@@ -23,10 +24,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${nunitoSans.variable} ${dmSans.variable} antialiased`}>
+				<ScrollToTop />
 				<ContactProvider>
 					<Navbar />
-					<div className="mt-5" />
-					<main className="body-container">{children}</main>
+					<main id="scrollFrame" className="body-container">{children}</main>
 					<Footer />
 					<ContactRoot />
 				</ContactProvider>

@@ -13,7 +13,8 @@ export default function Work() {
     const { title, embedLink, primaryColour } = getCaseStudy(active);
 
     return (
-        <section>
+        <section className="pb-8">
+            <div className="mt-15" />
             <h1>Case studies</h1>
             <div className="space-y-6">
                 <CaseStudyButtons

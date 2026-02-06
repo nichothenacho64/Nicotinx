@@ -5,7 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
-import { getFooterVisibility } from "@/lib/page-body";
+import { getFooterVisibility } from "@/lib/navigation/page-body";
 import { useContact } from "@/ui/contact-context";
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
                     : "opacity-0 pointer-events-none"
             )}
         >
-            <div id="navbar" className="body-container">
+            <div id="navbar" className="py-5 body-container">
                 <div className="font-semibold nav-links-container">
                     <Link href="/">
                         <Image
