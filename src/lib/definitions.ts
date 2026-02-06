@@ -15,8 +15,6 @@ export type CaseStudyLink = {
 
 export type ScrollySectionProps = {
     children: ReactNode;
-    index: number;
-    isLast?: boolean;
 };
 
 export type CaseStudy = {
@@ -68,4 +66,9 @@ export type ContactContextValue = {
     isOpen: boolean;
     open: () => void;
     close: () => void;
+};
+
+export type SectionMeta = {
+    index: number;
+    isFinalSection: boolean;
 };

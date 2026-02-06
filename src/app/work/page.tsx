@@ -1,5 +1,6 @@
 "use client";
 
+import "@/styles/work.css";
 import CanvaEmbed from "@/components/canva-embed";
 import { CaseStudyKey } from "@/lib/definitions";
 import { getCaseStudy } from "@/lib/utils";

@@ -1,11 +1,14 @@
 "use client";
 
-import { ContactModalProps } from "@/lib/definitions";
+import "@/styles/contact.css";
 import { useContactForm } from "@/lib/data";
 import { useAnimatedDots } from "@/lib/utils";
 import { ContactFormModal, ContactSuccessModal } from "@/ui/modals";
+import { useContactModalContext } from "@/ui/contact-context";
 
-export default function Contact({ isOpen, onClose }: ContactModalProps) {
+export default function Contact() {
+    const { isOpen, close } = useContactModalContext();
+
     const form = useContactForm();
     const dots = useAnimatedDots(form.isSending);
 
@@ -17,14 +20,14 @@ export default function Contact({ isOpen, onClose }: ContactModalProps) {
                 <ContactSuccessModal
                     onConfirm={() => {
                         form.closeSuccess();
-                        onClose();
+                        close();
                     }}
                 />
             ) : (
                 <ContactFormModal
                     form={form}
                     dots={dots}
-                    onClose={onClose}
+                    onClose={close}
                 />
             )}
         </article>

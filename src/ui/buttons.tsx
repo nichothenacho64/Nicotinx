@@ -3,10 +3,11 @@
 import { CASE_STUDIES, EXTERNAL_LINKS, NAV_LINKS } from "@/lib/constants";
 import { CaseStudyKey } from "@/lib/definitions";
 import Link from "next/link"
-import { useContact } from "@/ui/contact-context";
+import { useContactModalContext } from "@/ui/contact-context";
 import { NextPageLink, NextPageContactTrigger } from "@/ui/sequential-navigation";
 
 import { usePathname } from "next/navigation";
+import { useContactModal } from "@/lib/utils";
 
 export function CaseStudyButtons({
     active,
@@ -43,7 +44,7 @@ export function CaseStudyButtons({
 }
 
 export function FooterLinks() {
-    const { open } = useContact();
+    const { open } = useContactModalContext();
 
     return (
         <div className="flex gap-12 text-sm">
@@ -90,7 +91,7 @@ export function NextPageButton({
     additionalClass?: string;
 }) {
     const pathname = usePathname();
-    const { open } = useContact();
+    const { open } = useContactModalContext();
 
     const currentIndex = NAV_LINKS.findIndex(
         (link) => link.href === pathname

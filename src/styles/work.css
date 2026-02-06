@@ -3,7 +3,7 @@
 :root {
     --case-study-image: none;
     --case-study-primaryColour: #333;
-    --case-study-image-overlay: rgba(0, 0, 0, 0.5);
+    --case-study-image-overlay: rgba(0, 0, 0, 0.7);
     --button-click-transition-duration: 300ms;
     --button-active-transition-duration: 1000ms;
     --canva-embed-transition-duration: 1000ms;

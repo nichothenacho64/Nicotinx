@@ -1,11 +1,12 @@
+import "@/styles/home.css";
 import Image from "next/image";
 import { NextPageButton } from "@/ui/buttons";
-import { ScrollySection } from "@/components/scroll-section";
+import { ScrollableSection } from "@/components/scrollable-section";
 
 export default function Home() {
 	return (
 		<>
-			<ScrollySection index={0}>
+			<ScrollableSection>
 				<div className="mt-15" />
 				<div className="flex gap-12 body-container responsive-section">
 					<div className="w-full md:w-1/2">
@@ -52,9 +53,9 @@ export default function Home() {
 						/>
 					</div>
 				</div>
-			</ScrollySection>
+			</ScrollableSection>
 
-			<ScrollySection index={1}>
+			<ScrollableSection>
 				<div className="body-container">
 					<h1>My approach to design</h1>
 					<p>
@@ -69,9 +70,9 @@ export default function Home() {
 						much a visual thinker and that I love making everything into diagrams that illustrate information more clearly.
 					</p>
 				</div>
-			</ScrollySection>
+			</ScrollableSection>
 
-			<ScrollySection index={2} isLast>
+			<ScrollableSection>
 				<div
 					className="py-0 body-container"
 				>
@@ -91,7 +92,7 @@ export default function Home() {
 						<NextPageButton />
 					</div>
 				</div>
-			</ScrollySection>
+			</ScrollableSection>
 		</>
 	);
 }

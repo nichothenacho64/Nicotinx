@@ -4,22 +4,22 @@ import { createContext, useContext } from "react";
 import { useContactModal } from "@/lib/utils";
 import { ContactContextValue } from "@/lib/definitions";
 
-const ContactContext = createContext<ContactContextValue | null>(null);
+const ContactModalContext = createContext<ContactContextValue | null>(null);
 
-export function ContactProvider({ children }: { children: React.ReactNode }) {
+export function ContactModalProvider({ children }: { children: React.ReactNode }) {
     const modal = useContactModal();
 
     return (
-        <ContactContext.Provider value={modal}>
+        <ContactModalContext.Provider value={modal}>
             {children}
-        </ContactContext.Provider>
+        </ContactModalContext.Provider>
     );
 }
 
-export function useContact(): ContactContextValue {
-    const context = useContext(ContactContext);
+export function useContactModalContext(): ContactContextValue {
+    const context = useContext(ContactModalContext);
     if (!context) {
-        throw new Error("useContact must be used within ContactProvider");
+        throw new Error("useContactModalContext must be used within ContactModalProvider");
     }
     return context;
 }

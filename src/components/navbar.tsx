@@ -6,12 +6,12 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility } from "@/lib/navigation/page-body";
-import { useContact } from "@/ui/contact-context";
+import { useContactModalContext } from "@/ui/contact-context";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");
     const pathname = usePathname();
-    const { open } = useContact();
+    const { open } = useContactModalContext();
 
     return (
         <nav
