@@ -1,28 +1,5 @@
 import Link from "next/link";
-
-function NextPageButtonContent({ text }: { text: string }) {
-    return (
-        <>
-            <span>{text}</span>
-
-            <svg
-                id="toNextPageArrow"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="transition-transform group-hover:translate-x-1"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                />
-            </svg>
-        </>
-    );
-}
+import { RightArrow } from "@/ui/icons";
 
 export function NextPageLink({
     href,
@@ -42,7 +19,8 @@ export function NextPageLink({
                 backgroundColor: additionalClass ?? "var(--blue-default)",
             }}
         >
-            <NextPageButtonContent text={text} />
+            <span>{text}</span>
+            <RightArrow className="next-page-arrow" />
         </Link>
     );
 }
@@ -65,7 +43,8 @@ export function NextPageContactTrigger({
                 backgroundColor: additionalClass ?? "var(--blue-default)",
             }}
         >
-            <NextPageButtonContent text={text} />
+            <span>{text}</span>
+            <RightArrow className="next-page-arrow" />
         </button>
     );
 }

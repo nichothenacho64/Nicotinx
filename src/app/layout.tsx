@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import "@/styles/footer.css";
 import { dmSans, nunitoSans } from "@/ui/fonts";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";

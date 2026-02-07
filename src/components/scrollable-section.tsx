@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollySectionProps } from "@/lib/definitions";
 import {
     useScrollableSectionIndexMeta,
+    useMarkPreviousSectionWhenEntered,
     useScrollableSectionEnterObserver,
 } from "@/lib/navigation/scrollable-section-observer";
+import { DownArrow } from "@/ui/icons";
 
 export function ScrollableSection({
     children,
@@ -21,6 +23,7 @@ export function ScrollableSection({
     }, [sectionIndex]);
 
     useScrollableSectionEnterObserver(sectionIndex, sectionRef, setHasEnteredSection);
+    useMarkPreviousSectionWhenEntered(sectionIndex, sectionRef, hasEnteredSection);
 
     return (
         <section
@@ -34,6 +37,11 @@ export function ScrollableSection({
             >
                 {children}
             </div>
+            {!isFinalSection && (
+                <div className="scroll-down-indicator" aria-hidden="true">
+                    <DownArrow className="scroll-down-arrow" />
+                </div>
+            )}
         </section>
     );
 }

@@ -26,6 +26,7 @@ export default function Navbar() {
                 <div className="font-semibold nav-links-container">
                     <Link href="/">
                         <Image
+                            id="siteLogo"
                             src="/icon.svg"
                             alt="Site logo"
                             width={LOGO_SIZE_PX}

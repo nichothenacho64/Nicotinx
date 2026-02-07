@@ -52,6 +52,25 @@ export function useScrollableSectionEnterObserver(
     }, [sectionIndex, sectionRef, threshold, handleIntersect]);
 }
 
+export function useMarkPreviousSectionWhenEntered(
+    sectionIndex: number,
+    sectionRef: React.RefObject<HTMLElement | null>,
+    hasEnteredSection: boolean,
+) {
+    useEffect(() => {
+        if (!hasEnteredSection || sectionIndex <= 0) return;
+
+        const node = sectionRef.current;
+        if (!node) return;
+
+        const prevSection = node.previousElementSibling;
+        if (!(prevSection instanceof HTMLElement)) return;
+        if (prevSection.dataset.scrollSection !== "true") return;
+
+        prevSection.dataset.nextEntered = "true";
+    }, [hasEnteredSection, sectionIndex, sectionRef]);
+}
+
 export function useScrollableSectionIndexMeta(
     sectionRef: React.RefObject<HTMLElement | null>,
 ) {
