@@ -24,7 +24,7 @@ function lockBodyScroll(isLocked: boolean) {
     }, [isLocked]);
 }
 
-export function useContactModal(): ContactContextValue {
+export default function useContactModal(): ContactContextValue {
     const [isOpen, setIsOpen] = useState(false);
 
     const open = useCallback(() => setIsOpen(true), []);
