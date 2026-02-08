@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollySectionProps } from "@/lib/definitions";
 import {
-    useScrollableSectionIndexMeta,
-    useMarkPreviousSectionWhenEntered,
+    useMarkingSectionObserver,
     useScrollableSectionEnterObserver,
-} from "@/lib/navigation/scrollable-section-observer";
-import { DownArrow } from "@/ui/icons";
+} from "@/hooks/scrollable-section-observers";
+import { useScrollableSectionIndexMeta } from "@/hooks/meta";
+import { DownArrow } from "@/components/ui/icons";
 
-export function ScrollableSection({
+export default function ScrollableSection({
     children,
 }: ScrollySectionProps) {
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -23,7 +23,7 @@ export function ScrollableSection({
     }, [sectionIndex]);
 
     useScrollableSectionEnterObserver(sectionIndex, sectionRef, setHasEnteredSection);
-    useMarkPreviousSectionWhenEntered(sectionIndex, sectionRef, hasEnteredSection);
+    useMarkingSectionObserver(sectionIndex, sectionRef, hasEnteredSection);
 
     return (
         <section

@@ -5,8 +5,8 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
-import { getFooterVisibility } from "@/lib/navigation/page-body";
-import { useContactModalContext } from "@/ui/contact-context";
+import { getFooterVisibility } from "@/hooks/page-body";
+import { useContactModalContext } from "@/context/contact-context";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");

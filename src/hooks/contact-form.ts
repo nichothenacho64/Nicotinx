@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function useContactForm(onSuccess?: () => void) {
+export default function useContactForm(onSuccess?: () => void) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");

@@ -1,7 +1,7 @@
 import { DM_Sans, Nunito_Sans } from "next/font/google";
 
 export const dmSans = DM_Sans({
-    variable: "--font-dm-sans", // creating the variable for CSS usage
+    variable: "--font-dm-sans",
     subsets: ["latin"],
     display: "swap",
 });

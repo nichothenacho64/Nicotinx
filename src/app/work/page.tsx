@@ -1,12 +1,13 @@
 "use client";
 
 import "@/styles/work.css";
-import CanvaEmbed from "@/components/canva-embed";
+import CanvaEmbed from "@/components/features/canva-embed";
 import { CaseStudyKey } from "@/lib/definitions";
 import { getCaseStudy } from "@/lib/utils";
 import { useState } from "react";
-import { CaseStudyButtons, NextPageButton } from "@/ui/buttons";
-import { CaseStudyLinksModal } from "@/ui/modals";
+import CaseStudyButtons from "@/components/ui/buttons/case-study-buttons";
+import NextPageButton from "@/components/ui/buttons/next-page-button";
+import CaseStudyLinksModal from "@/components/ui/modals/case-study-links-modal";
 
 export default function Work() {
     const [active, setActive] = useState<CaseStudyKey>("HercuLabs");

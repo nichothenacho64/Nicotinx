@@ -1,10 +1,10 @@
 "use client";
 
 import "@/styles/contact.css";
-import { useContactForm } from "@/lib/data";
-import { useAnimatedDots } from "@/lib/utils";
-import { ContactFormModal, ContactSuccessModal } from "@/ui/modals";
-import { useContactModalContext } from "@/ui/contact-context";
+import useContactForm from "@/hooks/contact-form";
+import useAnimatedDots from "@/hooks/animated-dots";
+import { ContactFormModal, ContactSuccessModal } from "@/components/ui/modals/contact-modals";
+import { useContactModalContext } from "@/context/contact-context";
 
 export default function Contact() {
     const { isOpen, close } = useContactModalContext();

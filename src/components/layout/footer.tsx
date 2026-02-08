@@ -1,7 +1,7 @@
 "use client";
 
 import { CURRENT_YEAR } from "@/lib/constants";
-import { FooterLinks } from "@/ui/buttons";
+import FooterLinks from "@/components/ui/buttons/footer-links";
 
 export default function Footer() {
     return (

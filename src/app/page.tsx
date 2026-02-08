@@ -1,16 +1,15 @@
 "use client";
 
 import "@/styles/home.css";
-import { NextPageButton } from "@/ui/buttons";
-import { ScrollableSection } from "@/components/scrollable-section";
-import { AboutMeModal } from "@/ui/modals";
+import NextPageButton from "@/components/ui/buttons/next-page-button";
+import ScrollableSection from "@/components/features/scrollable-section";
+import AboutMeModal from "@/components/ui/modals/about-me-modal";
 
 
 export default function Home() {
 	return (
 		<>
 			<ScrollableSection>
-				{/* <div className="mt-15" /> */}
 				<AboutMeModal />
 			</ScrollableSection>
 
