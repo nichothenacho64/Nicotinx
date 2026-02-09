@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import useContactModal from "@/hooks/contact-modal";
+import useContactModal from "@/hooks/use-contact-modal";
 import { ContactContextValue } from "@/lib/definitions";
 
 const ContactModalContext = createContext<ContactContextValue | null>(null);

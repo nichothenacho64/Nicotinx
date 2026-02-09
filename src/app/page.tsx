@@ -32,7 +32,7 @@ export default function Home() {
 
 			<ScrollableSection>
 				<div className="py-0 scrollable-text">
-					<h1>But why design?</h1>
+					<h1>My design journey</h1>
 					<p>
 						To me, being an impactful designer is more than just learning and applying techniques for design research,
 						ideation, and prototyping. It is about challenging my biases and putting myself outside of my comfort zone

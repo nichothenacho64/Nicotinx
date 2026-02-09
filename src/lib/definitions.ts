@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ABOUT_IMAGES } from "./constants";
 
 export type CaseStudyKey = "HercuLabs" | "SCRUB" | "RandomReminder";
 
@@ -71,4 +72,25 @@ export type ContactContextValue = {
 export type SectionMeta = {
     index: number;
     isFinalSection: boolean;
+};
+
+export type AboutImage = (typeof ABOUT_IMAGES)[number];
+export type CrossfadePhase = "idle" | "armed" | "fading";
+
+export type StartFadeHookProps = {
+    crossfadePhase: CrossfadePhase;
+    transitionToken: number;
+    setCrossfadePhase: (phase: CrossfadePhase) => void;
+};
+
+export type FinishFadeHookProps = {
+    crossfadePhase: CrossfadePhase;
+    transitionToken: number;
+    onComplete: () => void;
+};
+
+export type AboutMeImageContainerProps = {
+    frontImage: AboutImage;
+    backImage: AboutImage | null;
+    backImageOpacity: number;
 };

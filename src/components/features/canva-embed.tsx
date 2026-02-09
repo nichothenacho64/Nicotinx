@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { CanvaEmbedProps } from "@/lib/definitions";
-import useAnimatedDots from "@/hooks/animated-dots";
+import useAnimatedDots from "@/hooks/use-animated-dots";
 
 export default function CanvaEmbed({
     title,

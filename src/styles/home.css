@@ -6,7 +6,11 @@ body {
 }
 
 #aboutMeModal {
-    @apply flex flex-col bg-[#f6f6f7] p-7 rounded-2xl min-h-[60dvh]; /* f6f9fc f6f6f7 */
+    @apply flex flex-col bg-[#f6f6f7] p-7 rounded-2xl min-h-[60dvh] w-full; /* f6f9fc f6f6f7 */
+}
+
+#aboutMeImageContainer {
+    @apply relative rounded-lg w-full md:w-1/2 h-64 md:h-auto overflow-hidden;
 }
 
 .responsive-section {

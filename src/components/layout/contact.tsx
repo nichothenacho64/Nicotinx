@@ -1,8 +1,8 @@
 "use client";
 
 import "@/styles/contact.css";
-import useContactForm from "@/hooks/contact-form";
-import useAnimatedDots from "@/hooks/animated-dots";
+import useContactForm from "@/hooks/use-contact-form";
+import useAnimatedDots from "@/hooks/use-animated-dots";
 import { ContactFormModal, ContactSuccessModal } from "@/components/ui/modals/contact-modals";
 import { useContactModalContext } from "@/context/contact-context";
 

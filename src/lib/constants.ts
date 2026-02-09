@@ -14,9 +14,18 @@ export const LOGO_SIZE_PX = 40;
 
 export const MESSAGE_ROWS = 4;
 
+export const CROSSFADE_DURATION_MS = 1000;
+export const CROSSFADE_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+
 const PRIMARY_BLUE = "#0f7bb8";
 const PRIMARY_MAGENTA = "#c0518c";
 const PRIMARY_INDIGO = "#7c71c7";
+
+export const ABOUT_IMAGES = [
+    { src: "/images/nico_photo.jpeg", alt: "Photo of Nico" },
+    { src: "/images/nico_design.jpeg", alt: "Photo of Nico (design)" },
+    { src: "/images/nico_piano.jpeg", alt: "Photo of Nico (piano)" },
+];
 
 export const NAV_LINKS: NavLink[] = [
     {

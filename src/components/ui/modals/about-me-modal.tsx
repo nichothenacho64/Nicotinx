@@ -1,75 +1,75 @@
-import { useState } from "react";
-import Image from "next/image";
+"use client";
+
+import useAboutImageCrossfade from "@/hooks/use-image-crossfade";
+import { ABOUT_IMAGES } from "@/lib/constants";
+import { AboutMeImageContainer } from "@/components/features/about-me-image-container";
+import AboutMeButtons from "../buttons/about-me-buttons";
+import Link from "next/link";
 
 export default function AboutMeModal() {
-    const [aboutIndex, setAboutIndex] = useState(0);
+    const { aboutIndex, frontImage, backImage, backImageOpacity, goToNextImage, goToPreviousImage } =
+        useAboutImageCrossfade(0);
+
+    const isFirstPage = aboutIndex === 0;
+    const isLastPage = aboutIndex === ABOUT_IMAGES.length - 1;
 
     return (
         <div id="aboutMeModal">
             <div className="flex flex-1 gap-12 responsive-section">
                 <div className="w-full md:w-1/2 scrollable-text">
-                    <h1>About me</h1>
                     {aboutIndex === 0 && (
-                        <p>
-                            Hello! I am Nico, a University student studying both{" "}
-                            <strong>Interaction Design and Digital Music</strong>, and everything in between like sound design!
-                            I primarily work as a UI/UX designer based in Sydney, in both professional and university-based settings,
-                            and as my computer science brother's personal interface design assistant for his high-quality personal
-                            projects on GitHub (against my own will).
-                        </p>
+                        <>
+                            <h1>Hey! I'm <span className="text-blue-default">Nico Napoli</span>, a UX/UI designer, based in Sydney.</h1>
+                            <p>
+                                I am a lifelong learner with a multitude of passions from UX and UI design to sound design.
+                            </p>
+                        </>
                     )}
 
                     {aboutIndex === 1 && (
-                        <p>
-                            I am interested in UI/UX design as I have always been fascinated by the middle-ground between technical
-                            and creative technology-related disciplines; I am hence able to employ{" "}
-                            <strong>critical thinking, innovation, and creativity</strong>{" "}
-                            in a new and emerging field that has so much potential to drive positive societal change.
-                        </p>
+                        <>
+                            <h1>Why design?</h1>
+                            <p>
+                                I am interested in UX/UI design as I have always been fascinated by the middle-ground between technical
+                                and creative technology-related disciplines; I am hence able to employ{" "}
+                                <strong>critical thinking, innovation, and creativity</strong>{" "}
+                                in a new and emerging field that has so much potential to drive positive societal change.
+                            </p>
+                        </>
                     )}
 
                     {aboutIndex === 2 && (
-                        <p>
-                            Outside of my academic and professional life, I love to compose solo piano works and{" "}
-                            <strong>
-                                obsessively listen to the music of{" "}
-                                <a
-                                    className="text-blue-default hover:underline"
-                                    href="https://www.sorabji-archive.co.uk/biography/biography.php"
-                                >
-                                    Kaikhosru Shapurji Sorabji
-                                </a>.
-                            </strong>
-                        </p>
+                        <>
+                            <h1>What about outside of design?</h1>
+                            <p>
+                                Outside of my academic and professional life, I love to compose solo piano works and{" "}
+                                <strong>
+                                    obsessively listen  to the music of{" "}
+                                    <Link
+                                        className="text-blue-default hover:underline"
+                                        href="https://www.sorabji-archive.co.uk/biography/biography.php"
+                                    >
+                                        Kaikhosru Shapurji Sorabji
+                                    </Link>.
+                                </strong>
+                            </p>
+                        </>
                     )}
                 </div>
-                <div className="relative w-full md:w-1/2 h-64 md:h-auto">
-                    <Image
-                        src="/images/nico_photo.jpg"
-                        alt="Photo of Nico"
-                        fill
-                        className="rounded-lg object-cover"
-                        sizes="50vw"
-                        priority
-                    />
-                </div>
+
+                <AboutMeImageContainer
+                    frontImage={frontImage}
+                    backImage={backImage}
+                    backImageOpacity={backImageOpacity}
+                />
             </div>
-            <div className="flex gap-4 mt-4">
-                <button
-                    className="small-button bg-(--blue-default)"
-                    onClick={() => setAboutIndex((i) => Math.max(i - 1, 0))}
-                    disabled={aboutIndex === 0}
-                >
-                    ← Say less
-                </button>
-                <button
-                    className="small-button bg-(--blue-default)"
-                    onClick={() => setAboutIndex((i) => Math.min(i + 1, 2))}
-                    disabled={aboutIndex === 2}
-                >
-                    Say more →
-                </button>
-            </div>
+
+            <AboutMeButtons
+                goToPreviousImage={goToPreviousImage}
+                goToNextImage={goToNextImage}
+                isFirstPage={isFirstPage}
+                isLastPage={isLastPage}
+            />
         </div>
     );
 }
