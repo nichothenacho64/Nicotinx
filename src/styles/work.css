@@ -2,7 +2,6 @@
 
 :root {
     --case-study-image: none;
-    --case-study-primaryColour: #333;
     --case-study-image-overlay: rgba(0, 0, 0, 0.7);
     --button-click-transition-duration: 300ms;
     --button-active-transition-duration: 1000ms;
@@ -13,16 +12,16 @@ body {
     background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
-#loadingSpin {
-    @apply w-16 h-16 border-4 border-white/40 border-t-white rounded-full animate-spin motion-reduce:hidden;
-}
-
 #canvaEmbedContainer {
     @apply relative w-full aspect-video rounded-xl overflow-hidden;
 }
 
 #canvaIframe {
     @apply absolute -top-px -left-px block w-[calc(100%+2px)] h-[calc(100%+2px)] border-0;
+}
+
+#canvaEmbedLoadingSpin {
+    @apply w-16 h-16 border-4 border-white/40 border-t-white rounded-full animate-spin motion-reduce:hidden;
 }
 
 #canvaEmbedLoadingBackground {
@@ -68,7 +67,7 @@ body {
 
 .case-study-button::before {
     content: "";
-    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50 bg-(--case-study-primaryColour) transition-transform duration-(--button-click-transition-duration) ease-out;
+    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50 bg-[#333] transition-transform duration-(--button-click-transition-duration) ease-out;
 }
 
 .case-study-button:hover::before {

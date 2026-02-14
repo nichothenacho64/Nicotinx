@@ -33,6 +33,30 @@ button:hover {
     @apply cursor-pointer;
 }
 
+.bg-blue-default {
+    @apply bg-(--blue-default);
+}
+
+.body-container {
+    @apply mx-auto max-w-6xl px-15;
+}
+
+.next-page-arrow {
+    @apply size-6 animate-pulse transition-transform group-hover:translate-x-1 group-hover:animate-[xWiggle_2s_ease-in-out_infinite];
+}
+
+.small-button {
+    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
+}
+
+.small-button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+.text-blue-default {
+    @apply text-(--blue-default);
+}
+
 .nav-link {
     @apply relative inline-block overflow-hidden py-4 text-gray-300 hover:text-white;
 }
@@ -67,30 +91,6 @@ button:hover {
     text-shadow:
         0 0 1px rgba(255, 255, 255, 0.6),
         0 0 2px rgba(255, 255, 255, 0.4);
-}
-
-.bg-blue-default {
-    @apply bg-(--blue-default);
-}
-
-.text-blue-default {
-    @apply text-(--blue-default);
-}
-
-.body-container {
-    @apply mx-auto max-w-6xl px-15;
-}
-
-.small-button {
-    @apply text-white hover:opacity-80 px-4 py-2 rounded-md font-medium text-sm transition-opacity;
-}
-
-.small-button:disabled {
-    @apply opacity-50 cursor-not-allowed;
-}
-
-.next-page-arrow {
-    @apply size-6 animate-pulse transition-transform group-hover:translate-x-1 group-hover:animate-[xWiggle_2s_ease-in-out_infinite];
 }
 
 #siteLogo {

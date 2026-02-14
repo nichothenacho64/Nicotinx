@@ -17,12 +17,12 @@ body {
     @apply flex md:flex-row flex-col items-stretch gap-8 mt-0;
 }
 
-.scrollable-text {
-    @apply text-lg max-md:text-base max-sm:text-sm; /* ! implement full responsivity later on!!! */
-}
-
 .inner-scrollable-section {
     @apply flex flex-col justify-start items-start transition-all duration-4000 ease-out;
+}
+
+.scrollable-text {
+    @apply text-lg max-md:text-base max-sm:text-sm; /* ! implement full responsivity later on!!! */
 }
 
 .scrollable-section,
@@ -57,7 +57,7 @@ body {
 
 .scroll-down-indicator {
     @apply pointer-events-none absolute bottom-6 left-1/2 flex items-center 
-    animate-[pulseOpacity_2.4s_ease-in-out_infinite] transition-opacity duration-300 ease-in-out translate-x-0.5;
+        animate-[pulseOpacity_2.4s_ease-in-out_infinite] transition-opacity duration-300 ease-in-out translate-x-0.5;
 }
 
 .scrollable-section[data-next-entered="true"]

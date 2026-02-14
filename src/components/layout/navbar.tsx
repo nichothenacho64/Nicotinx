@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { LOGO_SIZE_PX, NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { getFooterVisibility } from "@/hooks/get-footer-visbility";
 import { useContactModalContext } from "@/context/contact-context";
+import { SiteLogo } from "@/components/ui/icons";
 
 export default function Navbar() {
     const footerIsVisible = getFooterVisibility("footer");
@@ -24,16 +24,7 @@ export default function Navbar() {
         >
             <div id="navbar" className="py-5 body-container">
                 <div className="font-semibold nav-links-container">
-                    <Link href="/">
-                        <Image
-                            id="siteLogo"
-                            src="/icon.svg"
-                            alt="Site logo"
-                            width={LOGO_SIZE_PX}
-                            height={LOGO_SIZE_PX}
-                            priority
-                        />
-                    </Link>
+                    <SiteLogo />
                 </div>
 
                 <div className="flex gap-20 text-lg nav-links-container">

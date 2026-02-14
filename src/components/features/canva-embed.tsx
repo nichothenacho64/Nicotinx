@@ -32,7 +32,7 @@ export default function CanvaEmbed({
                         : "opacity-100"
                 )}
             >
-                <div id="loadingSpin" />
+                <div id="canvaEmbedLoadingSpin" />
 
                 <p className="py-3 text-white text-lg tracking-wide">
                     Preparing {title}

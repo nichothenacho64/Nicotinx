@@ -1,3 +1,22 @@
+import Image from "next/image";
+import Link from "next/link";
+import { LOGO_SIZE_PX } from "@/lib/constants";
+
+export function SiteLogo() {
+    return (
+        <Link href="/">
+            <Image
+                id="siteLogo"
+                src="/icon.svg"
+                alt="Site logo"
+                width={LOGO_SIZE_PX}
+                height={LOGO_SIZE_PX}
+                priority
+            />
+        </Link>
+    );
+}
+
 export function RightArrow({ className }: { className?: string }) {
     return (
         <svg
