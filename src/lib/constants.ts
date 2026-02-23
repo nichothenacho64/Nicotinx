@@ -3,7 +3,8 @@ import * as CaseStudyLinksModal from "@/lib/case-study-links";
 
 export const CURRENT_YEAR = new Date().getFullYear();
 
-export const CANVA_LINK = "https://www.canva.com/design/DAG_B3YjmSA/view?embed";
+export const CANVA_LINK =
+    "https://www.canva.com/design/DAG_B3YjmSA/I-QPziVXInVvI_D2WohOiQ/view?embed";
 
 export const PIPEDREAM_WEBHOOK_URL = "https://eop2bj23x0rc41m.m.pipedream.net";
 
