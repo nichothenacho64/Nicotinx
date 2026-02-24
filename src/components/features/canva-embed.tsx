@@ -34,7 +34,7 @@ export default function CanvaEmbed({
             >
                 <div id="canvaEmbedLoadingSpin" />
 
-                <p className="py-3 text-white text-lg tracking-wide">
+                <p id="caseStudyPreparingText">
                     Preparing {title}
                     {".".repeat(dots)}
                 </p>

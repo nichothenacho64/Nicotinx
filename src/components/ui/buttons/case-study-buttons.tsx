@@ -23,7 +23,7 @@ export default function CaseStudyButtons({
                         className="case-study-button case-study-button-layout"
                         style={{
                             "--case-study-image": `url(${CASE_STUDIES[key].image})`,
-                            "--case-study-primaryColour": CASE_STUDIES[key].primaryColour,
+                            "--case-study-primary-colour": CASE_STUDIES[key].primaryColour,
                         } as React.CSSProperties}
                     >
                         <h3 className="case-study-subheading">{key}</h3>

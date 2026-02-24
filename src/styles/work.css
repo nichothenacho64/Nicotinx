@@ -2,14 +2,11 @@
 
 :root {
     --case-study-image: none;
+    --case-study-primary-colour: #333;
     --case-study-image-overlay: rgba(0, 0, 0, 0.7);
     --button-click-transition-duration: 300ms;
     --button-active-transition-duration: 1000ms;
     --canva-embed-transition-duration: 1000ms;
-}
-
-body {
-    background-color: #fff; /* changing this to ensure that the CSS recompiles (it doesn't actually do anything) */
 }
 
 #canvaEmbedContainer {
@@ -44,6 +41,10 @@ body {
     @apply space-y-4 p-4 border rounded-xl;
 }
 
+#caseStudyPreparingText {
+    @apply py-3 text-white text-lg tracking-wide;
+}
+
 .case-study-button-layout {
     @apply flex flex-col flex-1 items-start px-6 py-6 w-full min-w-37.5 rounded-lg
         border text-sm transition-colors;
@@ -67,7 +68,7 @@ body {
 
 .case-study-button::before {
     content: "";
-    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50 bg-[#333] transition-transform duration-(--button-click-transition-duration) ease-out;
+    @apply absolute inset-0 z-0 origin-right scale-x-0 opacity-50 bg-(--case-study-primary-colour) transition-transform duration-(--button-click-transition-duration) ease-out;
 }
 
 .case-study-button:hover::before {
