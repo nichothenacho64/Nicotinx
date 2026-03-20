@@ -1,5 +1,6 @@
 import type { CaseStudy, NavLink } from "@/lib/definitions";
 import * as CaseStudyLinksModal from "@/lib/case-study-links";
+import { HERCULABS_DESCRIPTION, SCRUB_DESCRIPTION, RANDOM_REMINDER_DESCRIPTION } from "@/content/work/case-study-descriptions";
 
 export const CURRENT_YEAR = new Date().getFullYear();
 
@@ -62,8 +63,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         page: 0,
         primaryColour: PRIMARY_BLUE,
         image: "/images/herculabs.jpeg",
-        description:
-            "After the Olympics ends, fans like you and I lose our support for the Olympics and forget about our favourite athletes. However, HercuLabs can help us both to engage in the Olympian experience through helping us to feel the thrill, passion, and hardwork like the Olympian themself.",
+        description: HERCULABS_DESCRIPTION,
         links: [
             {
                 label: "Annotated flows (Figma)",
@@ -79,8 +79,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         page: 2,
         primaryColour: PRIMARY_MAGENTA,
         image: "/images/scrub.jpeg",
-        description:
-            "Does clothing recycling often feel like a chore! It is so boring, unclear, and forgettable. Perhaps it can be reimagined in a more playful way through an interactive recycling bin that is playful and rewarding in nature, then I can enjoy clothing recycling!",
+        description: SCRUB_DESCRIPTION,
         links: [
             {
                 label: "Protoype demonstration",
@@ -100,8 +99,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         page: 3,
         primaryColour: PRIMARY_INDIGO,
         image: "/images/randomreminder.jpeg",
-        description:
-            "Traditional reminder apps are so predictable and cannot support spontaneous tasks of mine. How can I create a minimalist macOS app that suprises me with reminders when I least expect them, helping to support habits that rely on randomness?",
+        description: RANDOM_REMINDER_DESCRIPTION,
         links: [
             {
                 label: "Figma high-fidelity prototype",
