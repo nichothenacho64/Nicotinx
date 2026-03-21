@@ -7,19 +7,21 @@ import { NAV_LINKS } from "@/lib/constants";
 function NextPageLink({
     href,
     text,
-    additionalClass,
+    className,
+    backgroundColor,
 }: {
     href: string;
     text: string;
-    additionalClass?: string;
+    className?: string;
+    backgroundColor?: string;
 }) {
     return (
         <Link
             id="toNextPageButton"
             href={href}
-            className="group inline-flex items-center gap-2"
+            className={`group inline-flex items-center gap-2 ${className ?? ""}`}
             style={{
-                backgroundColor: additionalClass ?? "var(--blue-default)",
+                backgroundColor: backgroundColor ?? "var(--blue-default)",
             }}
         >
             <span>{text}</span>
@@ -31,19 +33,21 @@ function NextPageLink({
 function NextPageContactTrigger({
     text,
     onClick,
-    additionalClass,
+    className,
+    backgroundColor,
 }: {
     text: string;
     onClick: () => void;
-    additionalClass?: string;
+    className?: string;
+    backgroundColor?: string;
 }) {
     return (
         <button
             id="toNextPageButton"
             onClick={onClick}
-            className="group inline-flex items-center gap-2"
+            className={`group inline-flex items-center gap-2 ${className ?? ""}`}
             style={{
-                backgroundColor: additionalClass ?? "var(--blue-default)",
+                backgroundColor: backgroundColor ?? "var(--blue-default)",
             }}
         >
             <span>{text}</span>
@@ -53,9 +57,11 @@ function NextPageContactTrigger({
 }
 
 export default function NextPageButton({
-    additionalClass,
+    className,
+    backgroundColor,
 }: {
-    additionalClass?: string;
+    className?: string;
+    backgroundColor?: string;
 }) {
     const pathname = usePathname();
     const { open } = useContactModalContext();
@@ -76,7 +82,8 @@ export default function NextPageButton({
             <NextPageContactTrigger
                 text={currentLink.nextText}
                 onClick={open}
-                additionalClass={additionalClass}
+                className={className}
+                backgroundColor={backgroundColor}
             />
         );
     } else {
@@ -84,7 +91,8 @@ export default function NextPageButton({
             <NextPageLink
                 href={nextLink.href}
                 text={currentLink.nextText}
-                additionalClass={additionalClass}
+                className={className}
+                backgroundColor={backgroundColor}
             />
         );
     }

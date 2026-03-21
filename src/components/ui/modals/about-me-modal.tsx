@@ -20,9 +20,7 @@ export default function AboutMeModal() {
             <div className="flex flex-1 gap-12 responsive-section">
                 <div className="w-full md:w-1/2 scrollable-text">
                     {aboutIndex === 0 && <Paragraph1P1 />}
-
                     {aboutIndex === 1 && <Paragraph1P2 />}
-
                     {aboutIndex === 2 && <Paragraph1P3 />}
                 </div>
 

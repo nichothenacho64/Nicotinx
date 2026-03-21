@@ -1,15 +1,20 @@
 export const HERCULABS_DESCRIPTION = `
-After the Olympics ends, fans like you and I lose our support for the Olympics and 
-forget about our favourite athletes. However, HercuLabs can help us both to engage 
-in the Olympian experience through helping us to feel the thrill, passion, 
-and hardwork like the Olympian themself.`;
+Olympic fan engagement declines significantly the moment the Games end. HercuLabs in an 
+omni-channel VR experience designed to close that gap, with the actual change being to
+make a system spanning physical queues, entry kiosks, VR simulation, and photo capture
+feel like one coherent journey rather than five separate toucpoints that are loosely connected.
+`;
 
 export const SCRUB_DESCRIPTION = `
-Does clothing recycling often feel like a chore! It is so boring, unclear, and forgettable. 
-Perhaps it can be reimagined in a more playful way through an interactive recycling bin that 
-is playful and rewarding in nature, then I can enjoy clothing recycling!`;
+People are usually willing to recycle clothing. The barrier is that the process is vague 
+with little feedback, and it is easy to skip. SCRUB is a physical-digital service designed
+around that friction, coordinating a bin, kiosk, and mobile app into something clear enough 
+to understand when first using it and worth returning to.
+`;
 
 export const RANDOM_REMINDER_DESCRIPTION = `
-Traditional reminder apps are so predictable and cannot support spontaneous tasks of mine. 
-How can I create a minimalist macOS app that suprises me with reminders when I least expect them, 
-helping to support habits that rely on randomness?`;
+Many reminder apps treat randomness as a scheduling edge case. RandomReminder is built around
+it as a core requirement, which reframes the design problem entirely. Constrained by Apple HIG
+and a tight SwiftUI feedback loop, the work was less about visual decisions and more about
+what structure and control still make sense when unpredictability is a core feature.
+`;

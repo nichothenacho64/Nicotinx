@@ -30,7 +30,7 @@ export default function Work() {
                     primaryColour={primaryColour}
                 />
                 <CaseStudyLinksModal active={active} />
-                <NextPageButton additionalClass={primaryColour} />
+                <NextPageButton backgroundColor={primaryColour} />
             </div>
         </section>
     );
